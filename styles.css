@@ -99,8 +99,10 @@ h1, h2, h3,
   padding:var(--sectionY) 0;
 }
 h2{
-  font-size:clamp(28px,3.2vw,38px);
+  font-family: 'Oswald', sans-serif;
+  font-size:clamp(28px,3.2vw,40px);
   margin:0 0 14px;
+  letter-spacing:.06em;
 }
 .muted{color:var(--muted)}
 .fine{
