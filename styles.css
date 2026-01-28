@@ -87,7 +87,13 @@ body{
     height:148px;
   }
 }
-
+h1, h2, h3,
+.header-brand,
+.tagline{
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
 /* Sections */
 .section{
   padding:var(--sectionY) 0;
