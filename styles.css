@@ -222,17 +222,18 @@ h2{
 }
 
 /* ===== CALL BUTTON — FINAL SIZE ===== */
+/* FORCE call button smaller even if it has hero CTA classes */
+img[src$="call-btn.png"],
 .call-btn-img{
-  width: 140px;      /* desktop */
-  max-width: 140px;
-  height: auto;
-  display: block;
-  margin: 1.25rem auto 0;
+  height: auto !important;
+  width: 140px !important;
+  max-width: 140px !important;
 }
 
 @media (max-width: 600px){
+  img[src$="call-btn.png"],
   .call-btn-img{
-    width: 120px;    /* mobile */
-    max-width: 120px;
+    width: 120px !important;
+    max-width: 120px !important;
   }
 }
