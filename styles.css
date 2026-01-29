@@ -395,3 +395,59 @@ img[src$="call-btn.png"]{
 .credit:hover{
   border-bottom-color:rgba(255,255,255,.7);
 }
+/* =========================
+   Gallery page
+   ========================= */
+.gallery-page{
+  /* inner pages need room under fixed header */
+  padding-top: calc(var(--headerH) + 28px);
+}
+
+/* Two-column before/after grid */
+.ba-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+  margin-top:18px;
+  align-items:start;
+}
+
+.ba-grid-head{
+  font-family:'Oswald', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:800;
+  color:rgba(255,255,255,.85);
+  padding:8px 10px;
+  border-radius:10px;
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.10);
+  text-align:center;
+  position:sticky;
+  top: calc(var(--headerH) + 10px);
+  z-index:2;
+}
+
+.ba-cell{
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.25);
+  display:block;
+}
+
+.ba-cell img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* Very small phones: collapse to one column (still readable) */
+@media(max-width:420px){
+  .ba-grid{
+    grid-template-columns:1fr;
+  }
+  .ba-grid-head{
+    position:static;
+  }
+}
