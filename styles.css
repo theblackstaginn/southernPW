@@ -320,3 +320,17 @@ img[src$="call-btn.png"]{
 .credit:hover{
   border-bottom-color:rgba(255,255,255,.7);
 }
+/* Anchor offsets so headings don't hide under fixed header */
+html{
+  scroll-padding-top: calc(var(--headerH) + 18px);
+}
+
+[id]{
+  scroll-margin-top: calc(var(--headerH) + 18px);
+}
+
+/* MOBILE: header is effectively taller (stacked + iOS), so increase offset */
+@media (max-width:700px){
+  html{ scroll-padding-top: 120px; }
+  [id]{ scroll-margin-top: 120px; }
+}
