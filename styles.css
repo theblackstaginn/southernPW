@@ -271,3 +271,43 @@ img[src$="call-btn.png"]{
 .credit:hover{
   border-bottom-color:rgba(0,0,0,.7);
 }
+
+/* =========================
+   Photorealistic water droplet panel overlay (FULL VIEWPORT)
+   ========================= */
+
+.hero,
+.section{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay layer */
+.hero::before,
+.section::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  /* Full viewport bleed */
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+
+  z-index: 1;
+
+  background-image: url("assets/panel-overlay.png");
+  background-repeat: repeat;
+  background-size: 512px 512px;
+  opacity: 0.18;
+
+  pointer-events: none;
+}
+
+/* Lift real content above overlay */
+.hero > *,
+.section > *{
+  position: relative;
+  z-index: 2;
+}
