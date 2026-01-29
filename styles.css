@@ -223,7 +223,7 @@ h2{
 }
 
 /* =========================
-   Before/After Paged Carousel
+   Before/After Paged Carousel (NO CROP)
    ========================= */
 .ba-carousel{
   position: relative;
@@ -254,7 +254,7 @@ h2{
 
   margin: 0 auto 38px;
 
-  /* NEW: lock the visual height of each image cell */
+  /* fixed visual slot height (desktop) */
   grid-auto-rows: 320px;
 }
 
@@ -264,19 +264,34 @@ h2{
   display:block;
   border-radius:12px;
 
-  /* NEW: crop to match height instead of stretching */
-  object-fit:cover;
-  object-position:center;
+  /* NO CROPPING / NO STRETCHING */
+  object-fit: contain;
+  object-position: center;
+
+  /* subtle mat so letterbox feels intentional */
+  background: rgba(0,0,0,.22);
 }
 
+/* Mobile: keep before/after side-by-side so you can see both without vertical scrolling */
 @media(max-width:820px){
   .car-page{
-    grid-template-columns: 1fr;
-    gap: 16px;
-    max-width: 640px;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
 
-    /* NEW: shorter frames on mobile */
-    grid-auto-rows: 240px;
+    max-width: 92vw;
+    margin: 0 auto 26px;
+
+    /* slot height scales with viewport */
+    grid-auto-rows: clamp(140px, 22vh, 190px);
+  }
+}
+
+/* Tiny phones: allow stack to preserve legibility */
+@media(max-width:420px){
+  .car-page{
+    grid-template-columns: 1fr;
+    gap: 14px;
+    grid-auto-rows: clamp(150px, 24vh, 190px);
   }
 }
 
