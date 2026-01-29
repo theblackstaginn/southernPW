@@ -146,7 +146,7 @@ h2{
 }
 
 .cta-absurd{
-  height:176px; /* DESKTOP */
+  height:176px;
 }
 
 .secondary{opacity:.92}
@@ -158,6 +158,38 @@ h2{
 
 @media(max-width:600px){
   .cta-absurd{height:148px;}
+}
+
+/* =========================
+   Full-width divider
+   ========================= */
+.section-divider{
+  width:100vw;
+  margin:40px 0 32px;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  pointer-events:none;
+}
+
+.section-divider img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:100px;
+  object-fit:cover;
+  opacity:.9;
+}
+
+@media(max-width:600px){
+  .section-divider{
+    margin:28px 0 24px;
+  }
+  .section-divider img{
+    max-height:80px;
+  }
 }
 
 /* =========================
@@ -189,17 +221,9 @@ h2{
   width:100%;
   border-radius:8px;
 }
-.ba-label{
-  display:block;
-  margin-top:10px;
-  font-weight:800;
-  letter-spacing:.12em;
-  font-size:12px;
-  color:var(--muted);
-}
 
 /* =========================
-   Services list
+   Services
    ========================= */
 .services{
   list-style:none;
@@ -213,7 +237,7 @@ h2{
 }
 
 /* =========================
-   Contact CTA (call button)
+   Contact CTA (Call button)
    ========================= */
 .contact-cta{
   margin-top:28px;
@@ -221,48 +245,22 @@ h2{
   justify-content:center;
 }
 
-/* ===== CALL BUTTON — FINAL SIZE ===== */
-/* FORCE call button smaller even if it has hero CTA classes */
-img[src$="call-btn.png"],
-.call-btn-img{
-  height: auto !important;
-  width: 140px !important;
-  max-width: 140px !important;
+/* Force call button size */
+img[src$="call-btn.png"]{
+  width:120px !important;
+  height:auto !important;
 }
 
-@media (max-width: 600px){
-  img[src$="call-btn.png"],
-  .call-btn-img{
-    width: 120px !important;
-    max-width: 120px !important;
-  }
-}
-/* ===== Black Stag Web credit (force black) ===== */
+/* =========================
+   Black Stag credit
+   ========================= */
 .credit,
 .credit:visited{
-  color: #000;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,.35);
+  color:#000;
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,0,0,.35);
 }
 
 .credit:hover{
-  color: #000;
-  border-bottom-color: rgba(0,0,0,.7);
-}
-.section-divider{
-  display:flex;
-  justify-content:center;
-  margin: 48px 0 32px;
-  pointer-events:none; /* purely visual */
-}
-
-.section-divider img{
-  width: min(900px, 90%);
-  height: auto;
-  opacity: .9;
-}
-@media(max-width:600px){
-  .section-divider{
-    margin: 36px 0 24px;
-  }
+  border-bottom-color:rgba(0,0,0,.7);
 }
