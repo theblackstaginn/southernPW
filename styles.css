@@ -303,7 +303,7 @@ h2{
    Referral section
    ========================= */
 .referral{
-  background:rgba(0,0,0,.35);
+  background: transparent;
   border-top:1px solid rgba(255,255,255,.08);
   border-bottom:1px solid rgba(255,255,255,.08);
 }
