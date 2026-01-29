@@ -207,3 +207,9 @@ h3{
   display: flex;
   justify-content: center;
 }
+.call-btn-img {
+  width: min(60vw, 320px); /* smaller on desktop + mobile */
+  height: auto;
+  display: block;
+  margin: 1.25rem auto 0;
+}
