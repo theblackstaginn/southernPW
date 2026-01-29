@@ -196,7 +196,7 @@ h2{
   display:block;
   width:100%;
   height:auto;
-  opacity:.9;
+  opacity:.55;
 }
 
 @media(max-width:600px){
