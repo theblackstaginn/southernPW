@@ -6,19 +6,17 @@
 
   <title>Southern Detailing &amp; Pressure Washing</title>
   <meta name="description" content="Exterior cleaning and mobile auto detailing serving Gwinnett, Hartwell, and surrounding areas in Georgia." />
-  
-  <!-- Open Graph / Facebook -->
-<meta property="og:type" content="business.business">
-<meta property="og:title" content="Southern Pressure Washing & Detailing">
-<meta property="og:description" content="Exterior cleaning & mobile auto detailing serving Gwinnett, Hartwell, and surrounding areas in Georgia.">
-<meta property="og:url" content="https://theblackstaginn.github.io/southernPW/">
-<meta property="og:image" content="https://theblackstaginn.github.io/southernPW/assets/spw-logo.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 
-<!-- Optional but recommended -->
-<meta property="og:site_name" content="Southern Pressure Washing & Detailing">
-  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="business.business">
+  <meta property="og:title" content="Southern Pressure Washing & Detailing">
+  <meta property="og:description" content="Exterior cleaning & mobile auto detailing serving Gwinnett, Hartwell, and surrounding areas in Georgia.">
+  <meta property="og:url" content="https://theblackstaginn.github.io/southernPW/">
+  <meta property="og:image" content="https://theblackstaginn.github.io/southernPW/assets/spw-logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Southern Pressure Washing & Detailing">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -73,52 +71,64 @@
       </p>
 
       <div class="hero-cta">
-        <a href="MARKATE_ESTIMATE_URL" target="_blank" rel="noopener">
+        <a href="MARKATE_ESTIMATE_URL" target="_blank" rel="noopener" aria-label="Request an estimate">
           <img src="assets/rqst-btn.png" alt="Request an Estimate" class="cta-img cta-absurd">
         </a>
 
-        <a href="https://www.facebook.com/SouthernCarDetailing" target="_blank" rel="noopener">
+        <a href="https://www.facebook.com/SouthernCarDetailing" target="_blank" rel="noopener" aria-label="Visit us on Facebook">
           <img src="assets/fb-btn.png" alt="Facebook" class="cta-img cta-absurd secondary">
         </a>
       </div>
     </div>
   </header>
-<!-- Local ownership sticker -->
-<div class="sticker-divider" aria-hidden="true">
-  <img src="assets/local-sticker.png" alt="">
-</div>
+
+  <!-- Local ownership sticker -->
+  <div class="sticker-divider" aria-hidden="true">
+    <img src="assets/local-sticker.png" alt="">
+  </div>
+
   <main>
 
     <!-- Recent Work -->
     <section class="section">
       <div class="wrap center">
         <h2>Recent Washes</h2>
-        <p class="muted">Before &amp; After</p>
+        <p class="muted">Before &amp; After — swipe or use arrows</p>
 
-        <div class="ba-row">
-          <img src="assets/dw-before.png" alt="Driveway before">
-          <img src="assets/dw-after.png" alt="Driveway after">
+        <!-- Paged carousel: each page = one before/after pair -->
+        <div class="ba-carousel" aria-label="Before and after gallery">
+          <button class="car-btn prev" type="button" aria-label="Previous before and after">‹</button>
+
+          <div class="car-track">
+            <div class="car-page">
+              <img src="assets/dw-before.png" alt="Driveway before">
+              <img src="assets/dw-after.png" alt="Driveway after">
+            </div>
+
+            <div class="car-page">
+              <img src="assets/ldw-before.png" alt="Large driveway before">
+              <img src="assets/ldw-after.png" alt="Large driveway after">
+            </div>
+
+            <div class="car-page">
+              <img src="assets/pat-before.png" alt="Patio before">
+              <img src="assets/pat-after.png" alt="Patio after">
+            </div>
+
+            <div class="car-page">
+              <img src="assets/roof-before.png" alt="Roof before">
+              <img src="assets/roof-after.png" alt="Roof after">
+            </div>
+
+            <div class="car-page">
+              <img src="assets/wall-before.png" alt="Wall before">
+              <img src="assets/wall-after.png" alt="Wall after">
+            </div>
+          </div>
+
+          <button class="car-btn next" type="button" aria-label="Next before and after">›</button>
         </div>
 
-        <div class="ba-row">
-          <img src="assets/ldw-before.png" alt="Large driveway before">
-          <img src="assets/ldw-after.png" alt="Large driveway after">
-        </div>
-
-        <div class="ba-row">
-          <img src="assets/pat-before.png" alt="Patio before">
-          <img src="assets/pat-after.png" alt="Patio after">
-        </div>
-
-        <div class="ba-row">
-          <img src="assets/roof-before.png" alt="Roof before">
-          <img src="assets/roof-after.png" alt="Roof after">
-        </div>
-
-        <div class="ba-row">
-          <img src="assets/wall-before.png" alt="Wall before">
-          <img src="assets/wall-after.png" alt="Wall after">
-        </div>
       </div>
     </section>
 
@@ -160,6 +170,26 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Before/After carousel: arrows jump exactly one pair at a time
+    (function(){
+      const car = document.querySelector(".ba-carousel");
+      if(!car) return;
+
+      const track = car.querySelector(".car-track");
+      const prev = car.querySelector(".prev");
+      const next = car.querySelector(".next");
+
+      const step = () => track.clientWidth; // 1 snap/page
+
+      prev.addEventListener("click", () => {
+        track.scrollBy({ left: -step(), behavior: "smooth" });
+      });
+
+      next.addEventListener("click", () => {
+        track.scrollBy({ left: step(), behavior: "smooth" });
+      });
+    })();
   </script>
 </body>
 </html>
