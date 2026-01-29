@@ -177,9 +177,9 @@ h2{
 .section-divider img{
   display:block;
   width:100%;
-  height:auto;
-  max-height:100px;
-  object-fit:cover;
+  height:auto;       /* let the PNG keep its true height */
+  max-height:none;   /* remove the crop */
+  object-fit:unset;  /* remove cover behavior */
   opacity:.9;
 }
 
