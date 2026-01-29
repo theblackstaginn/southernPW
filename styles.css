@@ -451,3 +451,38 @@ img[src$="call-btn.png"]{
     position:static;
   }
 }
+/* =========================
+   Bulletin / Announcement
+   ========================= */
+.bulletin{
+  padding: 32px 0 28px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.bulletin h3{
+  font-family:'Oswald', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin:0 0 12px;
+  color:#e10600;
+  text-shadow:0 1px 2px rgba(0,0,0,.85);
+}
+
+.bulletin p{
+  max-width:760px;
+  margin:0 auto 10px;
+  color:var(--muted);
+  font-weight:500;
+}
+
+.bulletin-note{
+  font-size:14px;
+  opacity:.85;
+}
+
+@media(max-width:600px){
+  .bulletin{
+    padding:26px 0 24px;
+  }
+}
