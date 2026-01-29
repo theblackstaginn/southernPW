@@ -257,36 +257,25 @@ body > main.section{
 }
 
 /* =========================
-   Carousel (single image per slide)
+   Carousel viewport safety
    ========================= */
 .ba-carousel{
-  position: relative;
-  max-width: 920px;
-  margin: 0 auto;
+  max-height: calc(100vh - var(--headerH) - 48px);
 }
-
-.car-track{
-  display:grid;
-  grid-auto-flow:column;
-  grid-auto-columns:100%;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
-.car-track::-webkit-scrollbar{ display:none; }
 
 .car-page{
-  scroll-snap-align:start;
-  margin:0 auto 38px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  max-height: calc(100vh - var(--headerH) - 48px);
 }
 
 .car-page img{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:12px;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Tap arrows */
