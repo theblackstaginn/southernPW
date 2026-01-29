@@ -4,6 +4,9 @@
   --wrap:1000px;
   --pad:20px;
   --sectionY:64px;
+
+  /* header sizing so hero never gets weird under fixed header */
+  --headerH:56px;
 }
 
 *{box-sizing:border-box}
@@ -60,7 +63,7 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  min-height:56px;
+  min-height:var(--headerH);
 }
 .header-brand{
   font-weight:800;
@@ -116,7 +119,8 @@ h2{
    HERO
    ========================= */
 .hero{
-  padding:80px 0 64px;
+  /* ensures hero starts below the fixed header */
+  padding:calc(var(--headerH) + 24px) 0 28px;
 }
 
 .logo{
@@ -161,34 +165,28 @@ h2{
 }
 
 /* =========================
-   Full-width divider
+   Full-width divider (100vw)
    ========================= */
 .section-divider{
   width:100vw;
-  margin:40px 0 32px;
+  /* pull it to true viewport width while staying centered */
   position:relative;
   left:50%;
-  right:50%;
-  margin-left:-50vw;
-  margin-right:-50vw;
+  transform:translateX(-50%);
+  margin:16px 0 10px;
   pointer-events:none;
 }
 
 .section-divider img{
   display:block;
   width:100%;
-  height:auto;       /* let the PNG keep its true height */
-  max-height:none;   /* remove the crop */
-  object-fit:unset;  /* remove cover behavior */
+  height:auto;
   opacity:.9;
 }
 
 @media(max-width:600px){
   .section-divider{
-    margin:28px 0 24px;
-  }
-  .section-divider img{
-    max-height:80px;
+    margin:12px 0 6px;
   }
 }
 
@@ -212,14 +210,23 @@ h2{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
-  margin-bottom:38px;
+
+  /* keeps the pairs centered and not stupid-wide */
+  max-width:920px;
+  margin:0 auto 38px;
 }
-@media(max-width:820px){
-  .ba-row{grid-template-columns:1fr}
-}
-.ba-item img{
+
+.ba-row img{
   width:100%;
-  border-radius:8px;
+  display:block;
+  border-radius:12px;
+}
+
+@media(max-width:820px){
+  .ba-row{
+    grid-template-columns:1fr;
+    max-width:640px;
+  }
 }
 
 /* =========================
