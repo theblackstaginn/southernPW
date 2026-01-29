@@ -4,6 +4,8 @@
   --wrap:1000px;
   --pad:20px;
   --sectionY:64px;
+
+  /* fixed header height baseline */
   --headerH:56px;
 }
 
@@ -17,7 +19,7 @@ body{
 }
 
 /* =========================
-   Background
+   Background (fixed)
    ========================= */
 .bg{
   position:fixed;
@@ -26,7 +28,7 @@ body{
   background:url("assets/web-bg.png") center/cover no-repeat;
 }
 
-/* Darken layer ONLY */
+/* Darken layer */
 .bg::after{
   content:"";
   position:absolute;
@@ -50,11 +52,13 @@ body{
 .center{text-align:center}
 
 /* =========================
-   Header
+   Top header (fixed)
    ========================= */
 .top-header{
   position:fixed;
-  inset:0 0 auto 0;
+  top:0;
+  left:0;
+  right:0;
   z-index:1000;
   background:#000;
   border-bottom:1px solid rgba(255,255,255,.08);
@@ -71,6 +75,7 @@ body{
   font-weight:800;
   letter-spacing:.04em;
   font-size:14px;
+  color:#fff;
 }
 
 .header-nav{
@@ -86,6 +91,7 @@ body{
 }
 .header-nav a:hover{color:#fff}
 
+/* When header stacks, it becomes taller — update the spacing math */
 @media(max-width:700px){
   :root{ --headerH:92px; }
 
@@ -121,7 +127,7 @@ h2{
 .muted{color:var(--muted)}
 
 /* =========================
-   Hero
+   HERO
    ========================= */
 .hero{
   padding:calc(var(--headerH) + 24px) 0 28px;
@@ -136,20 +142,25 @@ h2{
 }
 
 .tagline{
+  color:var(--muted);
   font-weight:600;
   margin-bottom:34px;
 }
 
-/* Hero CTA */
+/* HERO CTA */
 .hero-cta{
   display:flex;
   justify-content:center;
   gap:32px;
   flex-wrap:wrap;
+
+  /* FIX: keeps the FB column from sitting lower on desktop */
+  align-items:flex-start;
 }
 
 .cta-img{
   display:block;
+  width:auto;
   transition:transform .18s ease, filter .18s ease;
 }
 
@@ -161,42 +172,55 @@ h2{
   filter:brightness(1.08);
 }
 
+/* FB helper text + button */
 .fb-cta{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:10px;
+  justify-content:flex-start;
+
+  /* keeps the block “tight” and visually centered */
+  width:max-content;
 }
 
 .fb-line{
-  margin:0;
+  margin:0 0 10px;          /* removes default <p> margin weirdness */
   color:var(--muted);
   font-weight:700;
   letter-spacing:.02em;
+  text-align:center;
+  line-height:1.25;
 }
 
 @media(max-width:600px){
   .cta-absurd{height:148px;}
+  .fb-cta{width:100%;}
+  .fb-line{max-width:320px;}
 }
 
 /* =========================
-   Sticker divider
+   Local sticker divider
    ========================= */
 .sticker-divider{
   display:flex;
   justify-content:center;
-  margin:18px 0 12px;
+  margin: 18px 0 12px;
   pointer-events:none;
 }
 
 .sticker-divider img{
-  width:min(520px,72vw);
-  opacity:.95;
+  width: min(520px, 72vw);
+  height: auto;
+  opacity: 0.95;
 }
 
 @media(max-width:600px){
+  .sticker-divider{
+    margin: 14px 0 10px;
+  }
+
   .sticker-divider img{
-    width:min(440px,80vw);
+    width: min(440px, 80vw);
   }
 }
 
@@ -213,13 +237,20 @@ h2{
   opacity:.7;
 }
 
+/* ✅ CRITICAL FIX:
+   Internal pages use <main class="section"> directly under body.
+   Add top padding so fixed header never overlaps content (mobile Safari too). */
+body > main.section{
+  padding-top: calc(var(--headerH) + 28px);
+}
+
 /* =========================
-   Carousel (single image)
+   Carousel (single image per slide)
    ========================= */
 .ba-carousel{
-  position:relative;
-  max-width:920px;
-  margin:0 auto;
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .car-track{
@@ -229,9 +260,10 @@ h2{
   overflow-x:auto;
   scroll-snap-type:x mandatory;
   scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
 }
-.car-track::-webkit-scrollbar{display:none}
+.car-track::-webkit-scrollbar{ display:none; }
 
 .car-page{
   scroll-snap-align:start;
@@ -240,41 +272,50 @@ h2{
 
 .car-page img{
   width:100%;
+  height:auto;
+  display:block;
   border-radius:12px;
 }
 
+/* Tap arrows */
 .car-btn{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
   z-index:5;
+
   width:46px;
   height:46px;
   border-radius:999px;
+
   border:1px solid rgba(255,255,255,.25);
   background:rgba(0,0,0,.55);
   color:#fff;
+
   font-size:28px;
+  line-height:1;
   cursor:pointer;
 }
 
-.car-btn.prev{left:-10px}
-.car-btn.next{right:-10px}
+.car-btn.prev{ left:-10px; }
+.car-btn.next{ right:-10px; }
 
 @media(max-width:820px){
-  .car-btn.prev{left:6px}
-  .car-btn.next{right:6px}
-  .car-page{margin-bottom:26px}
+  .car-btn.prev{ left:6px; }
+  .car-btn.next{ right:6px; }
+  .car-page{ margin-bottom:26px; }
 }
 
 /* =========================
-   Referral
+   Referral section
    ========================= */
 .referral{
-  background:transparent;
+  background: transparent;
   border-top:1px solid rgba(255,255,255,.08);
   border-bottom:1px solid rgba(255,255,255,.08);
 }
+
+.referral h2{ margin-bottom:12px; }
 
 .referral p{
   max-width:760px;
@@ -297,7 +338,26 @@ h2{
 }
 
 /* =========================
-   Contact
+   FAQ block
+   ========================= */
+.faq{
+  max-width:820px;
+  margin: 14px auto 0;
+  text-align:left;
+}
+
+.faq p{
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height:1.55;
+}
+
+.faq strong{
+  color:#fff;
+}
+
+/* =========================
+   Contact CTA (Call button)
    ========================= */
 .contact-cta{
   margin-top:28px;
@@ -307,30 +367,19 @@ h2{
 
 img[src$="call-btn.png"]{
   width:120px !important;
+  height:auto !important;
 }
 
 /* =========================
-   Credit
+   Black Stag credit (not blue)
    ========================= */
-.credit{
+.credit,
+.credit:visited{
   color:inherit;
   text-decoration:none;
   border-bottom:1px solid rgba(255,255,255,.35);
 }
+
 .credit:hover{
   border-bottom-color:rgba(255,255,255,.7);
-}
-/* Anchor offsets so headings don't hide under fixed header */
-html{
-  scroll-padding-top: calc(var(--headerH) + 18px);
-}
-
-[id]{
-  scroll-margin-top: calc(var(--headerH) + 18px);
-}
-
-/* MOBILE: header is effectively taller (stacked + iOS), so increase offset */
-@media (max-width:700px){
-  html{ scroll-padding-top: 120px; }
-  [id]{ scroll-margin-top: 120px; }
 }
