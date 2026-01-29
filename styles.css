@@ -221,15 +221,18 @@ h2{
   justify-content:center;
 }
 
+/* ===== CALL BUTTON — FINAL SIZE ===== */
 .call-btn-img{
-  width:min(30vw, 180px); /* ~half your previous size */
-  height:auto;
-  display:block;
-  margin:1.25rem auto 0;
+  width: 140px;      /* desktop */
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin: 1.25rem auto 0;
 }
 
-@media(max-width:600px){
+@media (max-width: 600px){
   .call-btn-img{
-    width:170px; /* consistent small on mobile */
+    width: 120px;    /* mobile */
+    max-width: 120px;
   }
 }
