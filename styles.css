@@ -184,41 +184,29 @@ h2{
 }
 
 /* =========================
-   Divider (full viewport width + sticker)
+   Local sticker divider
    ========================= */
-.section-divider{
-  width:100vw;
-  position:relative;
-  left:50%;
-  transform:translateX(-50%);
-  margin:16px 0 10px;
-  pointer-events:none; /* purely visual */
+.sticker-divider{
+  display:flex;
+  justify-content:center;
+  margin: 18px 0 12px;
+  pointer-events:none;
 }
 
-.section-divider .divider-wave{
-  display:block;
-  width:100%;
-  height:auto;
-  opacity:.55; /* divider transparency */
+.sticker-divider img{
+  width: min(520px, 72vw);
+  height: auto;
+  opacity: 0.95;
 }
 
-/* Sticker sits just above the wave crest */
-.section-divider .divider-sticker{
-  position:absolute;
-  left:50%;
-  top:0;
-  transform:translate(-50%, -22%);
-  width:min(520px, 72vw);
-  height:auto;
-  opacity:.98;
-}
-
+/* Mobile tuning */
 @media(max-width:600px){
-  .section-divider{ margin:12px 0 6px; }
+  .sticker-divider{
+    margin: 14px 0 10px;
+  }
 
-  .section-divider .divider-sticker{
-    width:min(440px, 78vw);
-    transform:translate(-50%, -28%);
+  .sticker-divider img{
+    width: min(440px, 80vw);
   }
 }
 
