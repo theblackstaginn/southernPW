@@ -5,7 +5,7 @@
   --pad:20px;
   --sectionY:64px;
 
-  /* header sizing so hero never gets weird under fixed header */
+  /* fixed header height baseline */
   --headerH:56px;
 }
 
@@ -19,7 +19,7 @@ body{
 }
 
 /* =========================
-   Background
+   Background (fixed)
    ========================= */
 .bg{
   position:fixed;
@@ -35,8 +35,8 @@ body{
   inset:0;
   background-image:url("assets/panel-overlay.png");
   background-repeat:repeat;
-  background-size:512px 512px; /* adjust if you want denser/larger */
-  opacity:.75;                 /* dial up/down */
+  background-size:512px 512px;
+  opacity:.75;
   pointer-events:none;
 }
 
@@ -75,22 +75,26 @@ body{
   background:#000;
   border-bottom:1px solid rgba(255,255,255,.08);
 }
+
 .header-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
   min-height:var(--headerH);
 }
+
 .header-brand{
   font-weight:800;
   letter-spacing:.04em;
   font-size:14px;
   color:#fff;
 }
+
 .header-nav{
   display:flex;
   gap:20px;
 }
+
 .header-nav a{
   color:rgba(255,255,255,.75);
   text-decoration:none;
@@ -99,7 +103,10 @@ body{
 }
 .header-nav a:hover{color:#fff}
 
+/* When header stacks, it becomes taller — update the spacing math */
 @media(max-width:700px){
+  :root{ --headerH:92px; }
+
   .header-inner{
     flex-direction:column;
     gap:10px;
@@ -135,7 +142,6 @@ h2{
    HERO
    ========================= */
 .hero{
-  /* ensures hero starts below the fixed header */
   padding:calc(var(--headerH) + 24px) 0 28px;
 }
 
@@ -165,10 +171,7 @@ h2{
   transition:transform .18s ease, filter .18s ease;
 }
 
-.cta-absurd{
-  height:176px;
-}
-
+.cta-absurd{height:176px;}
 .secondary{opacity:.92}
 
 .cta-img:hover{
@@ -181,7 +184,7 @@ h2{
 }
 
 /* =========================
-   Full-width divider (100vw)
+   Divider (full viewport width + sticker)
    ========================= */
 .section-divider{
   width:100vw;
@@ -189,19 +192,33 @@ h2{
   left:50%;
   transform:translateX(-50%);
   margin:16px 0 10px;
-  pointer-events:none;
+  pointer-events:none; /* purely visual */
 }
 
-.section-divider img{
+.section-divider .divider-wave{
   display:block;
   width:100%;
   height:auto;
-  opacity:.35;
+  opacity:.55; /* divider transparency */
+}
+
+/* Sticker sits just above the wave crest */
+.section-divider .divider-sticker{
+  position:absolute;
+  left:50%;
+  top:0;
+  transform:translate(-50%, -22%);
+  width:min(520px, 72vw);
+  height:auto;
+  opacity:.98;
 }
 
 @media(max-width:600px){
-  .section-divider{
-    margin:12px 0 6px;
+  .section-divider{ margin:12px 0 6px; }
+
+  .section-divider .divider-sticker{
+    width:min(440px, 78vw);
+    transform:translate(-50%, -28%);
   }
 }
 
@@ -225,8 +242,6 @@ h2{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
-
-  /* keeps the pairs centered and not stupid-wide */
   max-width:920px;
   margin:0 auto 38px;
 }
@@ -274,15 +289,15 @@ img[src$="call-btn.png"]{
 }
 
 /* =========================
-   Black Stag credit
+   Black Stag credit (not blue)
    ========================= */
 .credit,
 .credit:visited{
-  color:#000;
+  color:inherit;
   text-decoration:none;
-  border-bottom:1px solid rgba(0,0,0,.35);
+  border-bottom:1px solid rgba(255,255,255,.35);
 }
 
 .credit:hover{
-  border-bottom-color:rgba(0,0,0,.7);
+  border-bottom-color:rgba(255,255,255,.7);
 }
