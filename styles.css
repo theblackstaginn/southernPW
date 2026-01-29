@@ -389,3 +389,39 @@ img[src$="call-btn.png"]{
 .credit:hover{
   border-bottom-color:rgba(255,255,255,.7);
 }
+/* =========================
+   Gallery — mobile sizing fix
+   ========================= */
+@media (max-width: 820px){
+
+  /* keep page breathing room */
+  .gallery-page{
+    padding-top: calc(var(--headerH) + 22px);
+  }
+
+  /* one column reads better on phones */
+  .ba-grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* kill sticky headers on mobile (they eat screen) */
+  .ba-grid-head{
+    position: static;
+    top: auto;
+  }
+
+  /* each image gets a sane max height */
+  .ba-cell{
+    max-width: 92vw;
+    margin: 0 auto;
+  }
+
+  .ba-cell img{
+    width: 100%;
+    height: auto;
+    max-height: 55vh;          /* key: prevents “giant poster” */
+    object-fit: contain;        /* no cropping */
+    background: rgba(0,0,0,.18);/* makes letterbox look intentional */
+  }
+}
