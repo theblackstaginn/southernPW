@@ -249,3 +249,20 @@ img[src$="call-btn.png"],
   color: #000;
   border-bottom-color: rgba(0,0,0,.7);
 }
+.section-divider{
+  display:flex;
+  justify-content:center;
+  margin: 48px 0 32px;
+  pointer-events:none; /* purely visual */
+}
+
+.section-divider img{
+  width: min(900px, 90%);
+  height: auto;
+  opacity: .9;
+}
+@media(max-width:600px){
+  .section-divider{
+    margin: 36px 0 24px;
+  }
+}
