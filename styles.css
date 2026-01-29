@@ -223,13 +223,12 @@ h2{
 }
 
 /* =========================
-   Before/After Paged Carousel (CLEAN + MOBILE FIX)
+   Before/After Paged Carousel
    ========================= */
 .ba-carousel{
   position: relative;
   max-width: 920px;
   margin: 0 auto;
-  padding: 0; /* desktop */
 }
 
 .car-track{
@@ -237,89 +236,76 @@ h2{
   grid-auto-flow: column;
   grid-auto-columns: 100%;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .car-track::-webkit-scrollbar{ display:none; }
 
+/* ===== DESKTOP: natural sizing (no forced heights) ===== */
 .car-page{
   scroll-snap-align: start;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
   margin: 0 auto 38px;
-  align-items: stretch;
 }
 
 .car-page img{
-  width: 100%;
-  display: block;
-  border-radius: 12px;
-}
-/* Ensure images are perfectly centered inside carousel tiles */
-.car-page{
-  align-items: center;   /* vertical centering */
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:12px;
 }
 
-.car-page img{
-  justify-self: center;  /* horizontal centering */
-  align-self: center;    /* vertical centering */
-}
-/* ===== MOBILE: make the tiles consistent and NOT janky ===== */
-@media (max-width: 820px){
-  .ba-carousel{
-    max-width: 92vw;
-    padding: 0 46px; /* makes room so arrows don’t sit on the images */
-  }
-
+/* ===== MOBILE: same slot height + CENTER images inside each slot ===== */
+@media(max-width:820px){
   .car-page{
-    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+
+    max-width: 92vw;
     margin: 0 auto 26px;
+
+    /* This makes the two image "slots" consistent */
+    grid-auto-rows: clamp(150px, 24vh, 210px);
+
+    /* This centers each image element inside its grid cell */
+    justify-items: center;
+    align-items: center;
   }
 
   .car-page img{
-    height: clamp(170px, 28vh, 240px); /* consistent tile height */
-    object-fit: cover;                 /* IMPORTANT: fixes the “thin strip” */
+    /* Don't force it to fill width — let aspect ratio breathe */
+    width: auto;
+    max-width: 100%;
+
+    /* Match the slot height consistently */
+    height: 100%;
+    max-height: 100%;
+
+    /* Keep full image visible, no cropping */
+    object-fit: contain;
     object-position: center;
+
+    /* Center in case the browser treats it like inline */
+    display:block;
+    margin: 0 auto;
+
+    /* Optional: subtle frame so skinny images don't look "broken" */
     background: rgba(0,0,0,.22);
+    border-radius: 12px;
   }
 }
 
 /* Tiny phones: stack if needed */
-@media (max-width: 420px){
+@media(max-width:420px){
   .car-page{
     grid-template-columns: 1fr;
-  }
-
-  .car-page img{
-    height: clamp(190px, 30vh, 260px);
+    grid-auto-rows: clamp(170px, 28vh, 230px);
   }
 }
-
-/* Tap arrows */
-.car-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:5;
-
-  width:44px;
-  height:44px;
-  border-radius:999px;
-
-  border:1px solid rgba(255,255,255,.25);
-  background:rgba(0,0,0,.55);
-  color:#fff;
-
-  font-size:28px;
-  line-height:1;
-  cursor:pointer;
-}
-
-.car-btn.prev{ left:6px; }
-.car-btn.next{ right:6px; }
 
 /* Tap arrows */
 .car-btn{
