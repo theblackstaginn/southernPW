@@ -149,10 +149,8 @@ h2{
   width:min(560px,95%);
   margin:0 auto 16px;
   display:block;
-
-  /* NEW: rounded logo corners */
-  border-radius:16px;     /* tweak: 10px subtle | 16–24px bold */
-  overflow:hidden;        /* ensures rounding applies cleanly */
+  border-radius:16px;
+  overflow:hidden;
 }
 
 .tagline{
@@ -227,7 +225,7 @@ h2{
 }
 
 /* =========================
-   Before/After Paged Carousel
+   Carousel (single image per slide)
    ========================= */
 .ba-carousel{
   position: relative;
@@ -236,24 +234,20 @@ h2{
 }
 
 .car-track{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:100%;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
 }
 .car-track::-webkit-scrollbar{ display:none; }
 
-/* ===== DESKTOP: natural sizing ===== */
 .car-page{
-  scroll-snap-align: start;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin: 0 auto 38px;
+  scroll-snap-align:start;
+  margin:0 auto 38px;
 }
 
 .car-page img{
@@ -261,49 +255,6 @@ h2{
   height:auto;
   display:block;
   border-radius:12px;
-}
-.referral{
-  background:rgba(0,0,0,.35);
-  border-top:1px solid rgba(255,255,255,.08);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.referral h2{
-  margin-bottom:12px;
-}
-
-.referral p{
-  max-width:760px;
-  margin:0 auto;
-  font-size:15px;
-}
-
-/* ===== MOBILE: fixed slots + center images (NO CROPPING) ===== */
-@media(max-width:820px){
-  .car-page{
-    grid-template-columns: 1fr 1fr;   /* keep before/after side-by-side */
-    gap: 14px;
-    max-width: 92vw;
-    margin: 0 auto 26px;
-
-    /* each image gets a consistent "slot" height */
-    grid-auto-rows: clamp(170px, 26vh, 230px);
-
-    /* helps prevent weird alignment */
-    align-items: stretch;
-  }
-
-  .car-page img{
-    width: 100%;
-    height: 100%;                 /* fill the slot */
-    object-fit: contain;          /* no cropping */
-    object-position: center;      /* centered inside the slot */
-    display:block;
-    border-radius:12px;
-
-    /* subtle letterbox so empty space looks intentional */
-    background: rgba(0,0,0,.22);
-  }
 }
 
 /* Tap arrows */
@@ -332,6 +283,24 @@ h2{
 @media(max-width:820px){
   .car-btn.prev{ left:6px; }
   .car-btn.next{ right:6px; }
+  .car-page{ margin-bottom:26px; }
+}
+
+/* =========================
+   Referral section
+   ========================= */
+.referral{
+  background:rgba(0,0,0,.35);
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.referral h2{ margin-bottom:12px; }
+
+.referral p{
+  max-width:760px;
+  margin:0 auto;
+  font-size:15px;
 }
 
 /* =========================
