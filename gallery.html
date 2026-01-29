@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gallery | Southern Pressure Washing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Before and after results from Southern Pressure Washing.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="top-header">
+    <div class="wrap header-inner">
+      <div class="header-brand">Southern Pressure Washing</div>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="areas.html">Service Areas</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section gallery-page">
+    <div class="wrap center">
+      <h2>Before / After Gallery</h2>
+      <p class="muted">Real results. Tap any image to zoom.</p>
+
+      <div class="ba-grid">
+        <div class="ba-grid-head">Before</div>
+        <div class="ba-grid-head">After</div>
+
+        <!-- ===== ROWS =====
+             Replace these with your actual file paths.
+             If your old images still live in assets/, keep them there.
+        -->
+        <a class="ba-cell" href="assets/dw-before.png" target="_blank" rel="noopener">
+          <img src="assets/dw-before.png" alt="Driveway before">
+        </a>
+        <a class="ba-cell" href="assets/dw-after.png" target="_blank" rel="noopener">
+          <img src="assets/dw-after.png" alt="Driveway after">
+        </a>
+
+        <a class="ba-cell" href="assets/ldw-before.png" target="_blank" rel="noopener">
+          <img src="assets/ldw-before.png" alt="Large driveway before">
+        </a>
+        <a class="ba-cell" href="assets/ldw-after.png" target="_blank" rel="noopener">
+          <img src="assets/ldw-after.png" alt="Large driveway after">
+        </a>
+
+        <a class="ba-cell" href="assets/pat-before.png" target="_blank" rel="noopener">
+          <img src="assets/pat-before.png" alt="Patio before">
+        </a>
+        <a class="ba-cell" href="assets/pat-after.png" target="_blank" rel="noopener">
+          <img src="assets/pat-after.png" alt="Patio after">
+        </a>
+
+        <a class="ba-cell" href="assets/roof-before.png" target="_blank" rel="noopener">
+          <img src="assets/roof-before.png" alt="Roof before">
+        </a>
+        <a class="ba-cell" href="assets/roof-after.png" target="_blank" rel="noopener">
+          <img src="assets/roof-after.png" alt="Roof after">
+        </a>
+
+        <a class="ba-cell" href="assets/wall-before.png" target="_blank" rel="noopener">
+          <img src="assets/wall-before.png" alt="Wall before">
+        </a>
+        <a class="ba-cell" href="assets/wall-after.png" target="_blank" rel="noopener">
+          <img src="assets/wall-after.png" alt="Wall after">
+        </a>
+      </div>
+
+      <p class="fine">
+        © <span id="year"></span> Southern Pressure Washing •
+        Site by <a href="https://blackstagweb.com" class="credit" target="_blank" rel="noopener">Black Stag Web</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
