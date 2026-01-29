@@ -149,6 +149,10 @@ h2{
   width:min(560px,95%);
   margin:0 auto 16px;
   display:block;
+
+  /* NEW: rounded logo corners */
+  border-radius:16px;     /* tweak: 10px subtle | 16–24px bold */
+  overflow:hidden;        /* ensures rounding applies cleanly */
 }
 
 .tagline{
