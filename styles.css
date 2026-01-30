@@ -389,6 +389,79 @@ img[src$="call-btn.png"]{
 .credit:hover{
   border-bottom-color:rgba(255,255,255,.7);
 }
+
+/* =========================
+   Gallery page (DESKTOP + DEFAULT)
+   Make images smaller + centered
+   ========================= */
+.gallery-page{
+  /* inner pages need room under fixed header */
+  padding-top: calc(var(--headerH) + 28px);
+}
+
+/* Clamp the whole gallery block so it doesn't go full wrap */
+.ba-grid{
+  display:grid;
+
+  /* Two columns, but each column has a max width */
+  grid-template-columns: repeat(2, minmax(0, 420px));
+  justify-content:center;
+
+  gap:14px;
+  margin-top:18px;
+
+  /* hard cap so it stays tasteful on wide screens */
+  max-width: 900px;
+  margin-left:auto;
+  margin-right:auto;
+
+  align-items:start;
+}
+
+.ba-grid-head{
+  font-family:'Oswald', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:800;
+  color:rgba(255,255,255,.85);
+  padding:8px 10px;
+  border-radius:10px;
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.10);
+  text-align:center;
+
+  position:sticky;
+  top: calc(var(--headerH) + 10px);
+  z-index:2;
+}
+
+.ba-cell{
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.25);
+  display:block;
+
+  /* ensures each cell centers within its column */
+  justify-self:center;
+  width:100%;
+  max-width:420px;
+}
+
+.ba-cell img{
+  width:100%;
+  height:auto;
+  display:block;
+
+  /* key: prevents massive tall images on desktop */
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center;
+
+  /* intentional letterbox */
+  background: rgba(0,0,0,.18);
+}
+
 /* =========================
    Gallery — mobile sizing fix
    ========================= */
@@ -402,6 +475,7 @@ img[src$="call-btn.png"]{
   /* one column reads better on phones */
   .ba-grid{
     grid-template-columns: 1fr;
+    max-width: 520px;
     gap: 12px;
   }
 
