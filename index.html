@@ -20,15 +20,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Favicon -->
-<link rel="icon" type="image/png" href="icons/favicon.png">
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <!-- Android / PWA Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-
-<!-- Android / PWA Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css" />
 
@@ -108,21 +108,22 @@
   <div class="sticker-divider" aria-hidden="true">
     <img src="assets/local-sticker.png" alt="">
   </div>
+
   <!-- Seasonal Bulletin -->
-<section class="bulletin">
-  <div class="wrap center">
-    <h3>🚨 Big Winter Discounts 🚨</h3>
-    <p>
-      If you already know you’ll be washing your
-      <strong>house, driveway, or roof</strong> this year,
-      you can lock in a <strong>significant discount</strong>
-      by requesting and accepting an estimate now.
-    </p>
-    <p class="bulletin-note">
-      Jobs scheduled for spring receive the deepest savings.
-    </p>
-  </div>
-</section>
+  <section class="bulletin">
+    <div class="wrap center">
+      <h3>🚨 Big Winter Discounts 🚨</h3>
+      <p>
+        If you already know you’ll be washing your
+        <strong>house, driveway, or roof</strong> this year,
+        you can lock in a <strong>significant discount</strong>
+        by requesting and accepting an estimate now.
+      </p>
+      <p class="bulletin-note">
+        Jobs scheduled for spring receive the deepest savings.
+      </p>
+    </div>
+  </section>
 
   <main>
 
@@ -145,11 +146,36 @@
             <div class="car-page"><img src="carousel/ba-7.png" alt="Before and after – project 7"></div>
             <div class="car-page"><img src="carousel/ba-8.png" alt="Before and after – project 8"></div>
             <div class="car-page"><img src="carousel/ba-9.png" alt="Before and after – project 9"></div>
+
+            <!-- ✅ NEW -->
+            <div class="car-page"><img src="carousel/ba-10.png" alt="Before and after – project 10"></div>
+            <div class="car-page"><img src="carousel/ba-11.png" alt="Before and after – project 11"></div>
           </div>
 
           <button class="car-btn next" type="button" aria-label="Next">›</button>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ✅ NEW: Auto Detailing carousel -->
+    <section class="section">
+      <div class="wrap center">
+        <h2>Auto Detailing – Recent Details</h2>
+
+        <div class="ba-carousel" aria-label="Auto detailing before and after gallery">
+          <button class="car-btn prev" type="button" aria-label="Previous">‹</button>
+
+          <div class="car-track">
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_01.PNG" alt="Auto detailing before and after – set 1"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_02.PNG" alt="Auto detailing before and after – set 2"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_03.PNG" alt="Auto detailing before and after – set 3"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_04.PNG" alt="Auto detailing before and after – set 4"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_05.PNG" alt="Auto detailing before and after – set 5"></div>
+          </div>
+
+          <button class="car-btn next" type="button" aria-label="Next">›</button>
+        </div>
       </div>
     </section>
 
@@ -207,22 +233,26 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // ✅ FIX: Support MULTIPLE carousels on the same page
     (function(){
-      const car = document.querySelector(".ba-carousel");
-      if(!car) return;
+      const cars = document.querySelectorAll(".ba-carousel");
+      if(!cars.length) return;
 
-      const track = car.querySelector(".car-track");
-      const prev = car.querySelector(".prev");
-      const next = car.querySelector(".next");
+      cars.forEach((car) => {
+        const track = car.querySelector(".car-track");
+        const prev = car.querySelector(".prev");
+        const next = car.querySelector(".next");
+        if(!track || !prev || !next) return;
 
-      const step = () => track.clientWidth;
+        const step = () => track.clientWidth;
 
-      prev.addEventListener("click", () => {
-        track.scrollBy({ left: -step(), behavior: "smooth" });
-      });
+        prev.addEventListener("click", () => {
+          track.scrollBy({ left: -step(), behavior: "smooth" });
+        });
 
-      next.addEventListener("click", () => {
-        track.scrollBy({ left: step(), behavior: "smooth" });
+        next.addEventListener("click", () => {
+          track.scrollBy({ left: step(), behavior: "smooth" });
+        });
       });
     })();
   </script>
