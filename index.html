@@ -235,10 +235,12 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ✅ FIX: Support MULTIPLE carousels on the same page
+    // ✅ Autoplay + loop for MULTIPLE carousels (keeps your scrollBy setup)
     (function(){
       const cars = document.querySelectorAll(".ba-carousel");
       if(!cars.length) return;
+
+      const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       cars.forEach((car) => {
         const track = car.querySelector(".car-track");
@@ -246,15 +248,75 @@
         const next = car.querySelector(".next");
         if(!track || !prev || !next) return;
 
+        const delayMs = 7000;          // autoplay speed
+        const cooldownMs = 9000;       // after manual interaction, wait a bit
+        let timer = null;
+        let paused = false;
+        let lastUserAction = 0;
+
         const step = () => track.clientWidth;
 
-        prev.addEventListener("click", () => {
+        function isAtEnd(){
+          // small tolerance so it doesn't fail on subpixel / iOS rounding
+          return (track.scrollLeft + track.clientWidth) >= (track.scrollWidth - 2);
+        }
+
+        function goNext(){
+          if(paused) return;
+
+          // don't fight the user
+          if(Date.now() - lastUserAction < cooldownMs) return;
+
+          if(isAtEnd()){
+            track.scrollTo({ left: 0, behavior: "smooth" });
+          } else {
+            track.scrollBy({ left: step(), behavior: "smooth" });
+          }
+        }
+
+        function start(){
+          if(reducedMotion) return;
+          if(timer) return;
+          timer = setInterval(goNext, delayMs);
+        }
+
+        function stop(){
+          if(!timer) return;
+          clearInterval(timer);
+          timer = null;
+        }
+
+        function userAction(fn){
+          lastUserAction = Date.now();
+          fn();
+        }
+
+        // Manual controls
+        prev.addEventListener("click", () => userAction(() => {
           track.scrollBy({ left: -step(), behavior: "smooth" });
+        }));
+
+        next.addEventListener("click", () => userAction(() => {
+          track.scrollBy({ left: step(), behavior: "smooth" });
+        }));
+
+        // Pause rules
+        car.addEventListener("mouseenter", () => { paused = true; });
+        car.addEventListener("mouseleave", () => { paused = false; });
+        car.addEventListener("touchstart", () => { paused = true; lastUserAction = Date.now(); }, { passive:true });
+        car.addEventListener("touchend", () => { paused = false; }, { passive:true });
+
+        // Pause while focused (keyboard users)
+        car.addEventListener("focusin", () => { paused = true; lastUserAction = Date.now(); });
+        car.addEventListener("focusout", () => { paused = false; });
+
+        // Save battery / avoid weird background scrolling
+        document.addEventListener("visibilitychange", () => {
+          if(document.hidden) stop();
+          else start();
         });
 
-        next.addEventListener("click", () => {
-          track.scrollBy({ left: step(), behavior: "smooth" });
-        });
+        start();
       });
     })();
   </script>
