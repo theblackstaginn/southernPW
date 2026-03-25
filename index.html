@@ -31,16 +31,14 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="icons/favicon.png">
-  <!-- Apple Touch Icon -->
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-  <!-- Android / PWA Icons -->
   <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Website Schema (ties everything together) -->
+  <!-- Website Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -79,7 +77,6 @@
 <body>
   <div class="bg" aria-hidden="true"></div>
 
-  <!-- Fixed Header -->
   <header class="top-header">
     <div class="wrap header-inner">
       <div class="header-brand">Southern Pressure Washing</div>
@@ -92,7 +89,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="wrap center">
       <img class="logo" src="assets/spw-logo.png" alt="Southern Pressure Washing">
@@ -101,12 +97,11 @@
         Southern Pressure Washing is a residential and commercial pressure washing business that offers professional pressure and soft washing services to
         Northeast Georgia and North Metro Atlanta. Established in 2022, Southern PW is committed to providing high quality and reliable services designed to
         keep your property looking its best. We pride ourselves in customer service, communication, and efficiency.
-      <br>
-        Follow us on Facebook to keep up with our day to day!
+        <br>
+        Follow us on Facebook to keep up with our day to day.
       </p>
 
       <div class="hero-cta">
-        <!-- ✅ FIX: Use Markate public contact form (works for everyone, no email app dependency) -->
         <a
           href="https://www.markate.com/public/widget/contact/page/40065/southern-pressure-washing-0"
           target="_blank"
@@ -125,61 +120,87 @@
     </div>
   </header>
 
-  <!-- Local ownership sticker -->
   <div class="sticker-divider" aria-hidden="true">
     <img src="assets/local-sticker.png" alt="">
   </div>
 
-  <!-- Seasonal Bulletin -->
   <section class="bulletin">
     <div class="wrap center">
-      <h3>🚨 Big Winter Discounts 🚨</h3>
+      <h3>April Special Offer</h3>
       <p>
-        If you already know you’ll be washing your
-        <strong>house, driveway, or roof</strong> this year,
-        you can lock in a <strong>significant discount</strong>
-        by requesting and accepting an estimate now.
+        Get a <strong>FREE Basic Interior &amp; Exterior Detail</strong> when you spend
+        <strong>$350 or more on pressure washing</strong>.
       </p>
       <p class="bulletin-note">
-        Jobs scheduled for spring receive the deepest savings.
+        $70 to $80 value. Customer must claim the offer to get it.
       </p>
     </div>
   </section>
 
   <main>
 
-    <!-- Recent Work -->
+    <section class="section truck-section">
+      <div class="wrap center">
+        <h2>Southern Pressure Washing On The Job</h2>
+        <img class="truck-shot" src="assets/spw-badass-truck.png" alt="Southern Pressure Washing work truck">
+        <p class="muted truck-copy">
+          Real equipment, real service, real results.
+        </p>
+      </div>
+    </section>
+
     <section class="section">
       <div class="wrap center">
         <h2>Recent Washes</h2>
 
-        <!-- Single-image carousel slides -->
         <div class="ba-carousel" aria-label="Before and after gallery">
           <button class="car-btn prev" type="button" aria-label="Previous">‹</button>
 
           <div class="car-track">
-            <div class="car-page"><img src="carousel/ba-1.png" alt="Before and after – project 1"></div>
-            <div class="car-page"><img src="carousel/ba-2.png" alt="Before and after – project 2"></div>
-            <div class="car-page"><img src="carousel/ba-3.png" alt="Before and after – project 3"></div>
-            <div class="car-page"><img src="carousel/ba-4.png" alt="Before and after – project 4"></div>
-            <div class="car-page"><img src="carousel/ba-5.png" alt="Before and after – project 5"></div>
-            <div class="car-page"><img src="carousel/ba-6.png" alt="Before and after – project 6"></div>
-            <div class="car-page"><img src="carousel/ba-7.png" alt="Before and after – project 7"></div>
-            <div class="car-page"><img src="carousel/ba-8.png" alt="Before and after – project 8"></div>
-            <div class="car-page"><img src="carousel/ba-9.png" alt="Before and after – project 9"></div>
-
-            <!-- ✅ NEW -->
-            <div class="car-page"><img src="carousel/ba-10.png" alt="Before and after – project 10"></div>
-            <div class="car-page"><img src="carousel/ba-11.png" alt="Before and after – project 11"></div>
+            <div class="car-page"><img src="carousel/ba-1.png" alt="Before and after project 1"></div>
+            <div class="car-page"><img src="carousel/ba-2.png" alt="Before and after project 2"></div>
+            <div class="car-page"><img src="carousel/ba-3.png" alt="Before and after project 3"></div>
+            <div class="car-page"><img src="carousel/ba-4.png" alt="Before and after project 4"></div>
+            <div class="car-page"><img src="carousel/ba-5.png" alt="Before and after project 5"></div>
+            <div class="car-page"><img src="carousel/ba-6.png" alt="Before and after project 6"></div>
+            <div class="car-page"><img src="carousel/ba-7.png" alt="Before and after project 7"></div>
+            <div class="car-page"><img src="carousel/ba-8.png" alt="Before and after project 8"></div>
+            <div class="car-page"><img src="carousel/ba-9.png" alt="Before and after project 9"></div>
+            <div class="car-page"><img src="carousel/ba-10.png" alt="Before and after project 10"></div>
+            <div class="car-page"><img src="carousel/ba-11.png" alt="Before and after project 11"></div>
           </div>
 
           <button class="car-btn next" type="button" aria-label="Next">›</button>
         </div>
-
       </div>
     </section>
 
-    <!-- ✅ NEW: Auto Detailing carousel -->
+    <section class="section work-preview">
+      <div class="wrap center">
+        <h2>Pressure Washing Results</h2>
+        <p class="muted">A few recent examples from driveways, walls, concrete, and exterior surfaces.</p>
+
+        <div class="preview-grid">
+          <a class="preview-card" href="gallery.html">
+            <img src="assets/dw-after.png" alt="Driveway cleaning result">
+          </a>
+          <a class="preview-card" href="gallery.html">
+            <img src="assets/roof-after.png" alt="Roof soft wash result">
+          </a>
+          <a class="preview-card" href="gallery.html">
+            <img src="assets/side-wall-after.png" alt="Side wall cleaning result">
+          </a>
+          <a class="preview-card" href="gallery.html">
+            <img src="assets/shop-after.png" alt="Shop exterior cleaning result">
+          </a>
+        </div>
+
+        <p class="gallery-link-row">
+          <a class="gallery-link" href="gallery.html">View Full Gallery</a>
+        </p>
+      </div>
+    </section>
+
     <section class="section">
       <div class="wrap center">
         <h2>Auto Detailing</h2>
@@ -188,11 +209,11 @@
           <button class="car-btn prev" type="button" aria-label="Previous">‹</button>
 
           <div class="car-track">
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_01.PNG" alt="Auto detailing before and after – set 1"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_02.PNG" alt="Auto detailing before and after – set 2"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_03.PNG" alt="Auto detailing before and after – set 3"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_04.PNG" alt="Auto detailing before and after – set 4"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_05.PNG" alt="Auto detailing before and after – set 5"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_01.PNG" alt="Auto detailing before and after set 1"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_02.PNG" alt="Auto detailing before and after set 2"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_03.PNG" alt="Auto detailing before and after set 3"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_04.PNG" alt="Auto detailing before and after set 4"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_05.PNG" alt="Auto detailing before and after set 5"></div>
           </div>
 
           <button class="car-btn next" type="button" aria-label="Next">›</button>
@@ -200,28 +221,72 @@
       </div>
     </section>
 
-    <!-- Services -->
+    <section class="section work-preview">
+      <div class="wrap center">
+        <h2>Detailing Photos</h2>
+        <p class="muted">Interior and exterior detailing results from recent jobs.</p>
+
+        <div class="preview-grid">
+          <a class="preview-card" href="gallery.html">
+            <img src="auto-carousel/auto-01.png" alt="Auto detailing result 1">
+          </a>
+          <a class="preview-card" href="gallery.html">
+            <img src="auto-carousel/auto-02.png" alt="Auto detailing result 2">
+          </a>
+          <a class="preview-card" href="gallery.html">
+            <img src="auto-carousel/auto_detail_collage_clean_03.PNG" alt="Auto detailing collage 3">
+          </a>
+          <a class="preview-card" href="gallery.html">
+            <img src="auto-carousel/auto_detail_collage_clean_05.PNG" alt="Auto detailing collage 5">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section video-section">
+      <div class="wrap center">
+        <h2>Watch Us Work</h2>
+        <p class="muted">Scroll through the clips and choose what you want to watch.</p>
+
+        <div class="video-stage">
+          <video id="mainVideo" controls playsinline preload="metadata" poster="assets/spw-badass-truck.png">
+            <source src="video/Timelapse-01.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-rail" id="videoRail" aria-label="Video selection">
+          <button class="video-thumb active" type="button" data-src="video/Timelapse-01.mp4">
+            <span>Timelapse 01</span>
+          </button>
+
+          <button class="video-thumb" type="button" data-src="video/Timelapse-02.mp4">
+            <span>Timelapse 02</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="wrap center">
         <h2>Services</h2>
         <ul class="services">
-        <li>House Washing</li>
-        <li>Campers/RVs</li>
-        <li>Boat Docks</li>
-        <li>Driveways &amp; Sidewalks</li>
-        <li>Patios &amp; Pavers</li>
-        <li>Brick, Stone &amp; Concrete</li>
-        <li>Roof Soft Washing</li>
-        <li>Gutters (Exterior)</li>
-        <li>Fence &amp; Deck Cleaning</li>
-        <li><strong>Mobile Auto Detailing</strong></li>
-        <li>Heavy Equipment</li>
-        <li>Commercial Fleets</li>
+          <li>House Washing</li>
+          <li>Campers/RVs</li>
+          <li>Boat Docks</li>
+          <li>Driveways &amp; Sidewalks</li>
+          <li>Patios &amp; Pavers</li>
+          <li>Brick, Stone &amp; Concrete</li>
+          <li>Roof Soft Washing</li>
+          <li>Gutters (Exterior)</li>
+          <li>Fence &amp; Deck Cleaning</li>
+          <li><strong>Mobile Auto Detailing</strong></li>
+          <li>Heavy Equipment</li>
+          <li>Commercial Fleets</li>
         </ul>
       </div>
     </section>
 
-    <!-- Referral Program -->
     <section class="section referral">
       <div class="wrap center">
         <h2>Ask About Our Referral Program</h2>
@@ -236,7 +301,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section class="section">
       <div class="wrap center">
         <h2>Contact</h2>
@@ -260,88 +324,47 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ✅ Autoplay + loop for MULTIPLE carousels (keeps your scrollBy setup)
-    (function(){
+    (function () {
       const cars = document.querySelectorAll(".ba-carousel");
-      if(!cars.length) return;
-
-      const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!cars.length) return;
 
       cars.forEach((car) => {
         const track = car.querySelector(".car-track");
         const prev = car.querySelector(".prev");
         const next = car.querySelector(".next");
-        if(!track || !prev || !next) return;
-
-        const delayMs = 7000;          // autoplay speed
-        const cooldownMs = 9000;       // after manual interaction, wait a bit
-        let timer = null;
-        let paused = false;
-        let lastUserAction = 0;
+        if (!track || !prev || !next) return;
 
         const step = () => track.clientWidth;
 
-        function isAtEnd(){
-          // small tolerance so it doesn't fail on subpixel / iOS rounding
-          return (track.scrollLeft + track.clientWidth) >= (track.scrollWidth - 2);
-        }
-
-        function goNext(){
-          if(paused) return;
-
-          // don't fight the user
-          if(Date.now() - lastUserAction < cooldownMs) return;
-
-          if(isAtEnd()){
-            track.scrollTo({ left: 0, behavior: "smooth" });
-          } else {
-            track.scrollBy({ left: step(), behavior: "smooth" });
-          }
-        }
-
-        function start(){
-          if(reducedMotion) return;
-          if(timer) return;
-          timer = setInterval(goNext, delayMs);
-        }
-
-        function stop(){
-          if(!timer) return;
-          clearInterval(timer);
-          timer = null;
-        }
-
-        function userAction(fn){
-          lastUserAction = Date.now();
-          fn();
-        }
-
-        // Manual controls
-        prev.addEventListener("click", () => userAction(() => {
+        prev.addEventListener("click", () => {
           track.scrollBy({ left: -step(), behavior: "smooth" });
-        }));
-
-        next.addEventListener("click", () => userAction(() => {
-          track.scrollBy({ left: step(), behavior: "smooth" });
-        }));
-
-        // Pause rules
-        car.addEventListener("mouseenter", () => { paused = true; });
-        car.addEventListener("mouseleave", () => { paused = false; });
-        car.addEventListener("touchstart", () => { paused = true; lastUserAction = Date.now(); }, { passive:true });
-        car.addEventListener("touchend", () => { paused = false; }, { passive:true });
-
-        // Pause while focused (keyboard users)
-        car.addEventListener("focusin", () => { paused = true; lastUserAction = Date.now(); });
-        car.addEventListener("focusout", () => { paused = false; });
-
-        // Save battery / avoid weird background scrolling
-        document.addEventListener("visibilitychange", () => {
-          if(document.hidden) stop();
-          else start();
         });
 
-        start();
+        next.addEventListener("click", () => {
+          track.scrollBy({ left: step(), behavior: "smooth" });
+        });
+      });
+    })();
+
+    (function () {
+      const mainVideo = document.getElementById("mainVideo");
+      const thumbs = document.querySelectorAll(".video-thumb");
+
+      if (!mainVideo || !thumbs.length) return;
+
+      thumbs.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          thumbs.forEach((t) => t.classList.remove("active"));
+          btn.classList.add("active");
+
+          const source = mainVideo.querySelector("source");
+          if (!source) return;
+
+          mainVideo.pause();
+          mainVideo.currentTime = 0;
+          source.src = btn.dataset.src;
+          mainVideo.load();
+        });
       });
     })();
   </script>
