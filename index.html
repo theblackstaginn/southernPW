@@ -252,18 +252,12 @@
           </button>
 
           <div class="video-thumb-track" id="videoThumbTrack">
-            <button class="video-thumb active" type="button" data-src="video/Timelapse-01.mp4" aria-label="Select timelapse 1">
-              <video muted playsinline preload="metadata" tabindex="-1">
-                <source src="video/Timelapse-01.mp4" type="video/mp4">
-              </video>
-              <span>Timelapse 01</span>
+            <button class="video-thumb active" type="button" data-src="video/Timelapse-01.mp4" aria-label="Play timelapse 1">
+              <img src="video/tl-01-thumb.jpg" alt="Timelapse 01 preview">
             </button>
 
-            <button class="video-thumb" type="button" data-src="video/Timelapse-02.mp4" aria-label="Select timelapse 2">
-              <video muted playsinline preload="metadata" tabindex="-1">
-                <source src="video/Timelapse-02.mp4" type="video/mp4">
-              </video>
-              <span>Timelapse 02</span>
+            <button class="video-thumb" type="button" data-src="video/Timelapse-02.mp4" aria-label="Play timelapse 2">
+              <img src="video/tl-02-thumb.jpg" alt="Timelapse 02 preview">
             </button>
           </div>
 
@@ -363,12 +357,6 @@
       if (!mainVideo || !thumbTrack || !thumbs.length || !prevBtn || !nextBtn) return;
 
       thumbs.forEach((thumb) => {
-        const innerVideo = thumb.querySelector("video");
-        if (innerVideo) {
-          innerVideo.pause();
-          innerVideo.currentTime = 0;
-        }
-
         thumb.addEventListener("click", () => {
           thumbs.forEach((t) => t.classList.remove("active"));
           thumb.classList.add("active");
