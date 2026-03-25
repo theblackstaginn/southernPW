@@ -17,13 +17,13 @@ body{
 }
 
 /* =========================
-   Background
+   Background (RESTORED)
    ========================= */
 .bg{
   position:fixed;
   inset:0;
   z-index:-1;
-  background:url("assets/cool-sky.webp") center/cover no-repeat;
+  background:url("assets/web-bg.png") center/cover no-repeat;
 }
 
 .bg::after{
@@ -31,6 +31,7 @@ body{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,.55);
+  pointer-events:none;
 }
 
 @media(max-width:820px){
@@ -83,11 +84,11 @@ body{
   text-decoration:none;
   font-weight:600;
 }
-
 .header-nav a:hover{color:#fff}
 
 @media(max-width:700px){
   :root{ --headerH:92px; }
+
   .header-inner{
     flex-direction:column;
     gap:10px;
@@ -107,7 +108,7 @@ h1,h2,h3{
 .muted{color:var(--muted)}
 
 /* =========================
-   Hero
+   HERO
    ========================= */
 .hero{
   padding:calc(var(--headerH) + 24px) 0 28px;
@@ -145,7 +146,6 @@ body > main.section{
   overflow-x:auto;
   scroll-snap-type:x mandatory;
   scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
 }
 .car-track::-webkit-scrollbar{display:none}
@@ -167,7 +167,7 @@ body > main.section{
 }
 
 /* =========================
-   Arrow Buttons (IMAGE BASED)
+   Custom Arrow Buttons
    ========================= */
 .car-btn{
   position:absolute;
@@ -203,20 +203,19 @@ body > main.section{
 }
 
 /* =========================
-   VIDEO SECTION (FIXED)
+   VIDEO SECTION (ONLY FIX APPLIED)
    ========================= */
 
-/* Main container */
+/* container */
 .video-feature{
-  max-width:480px;
+  max-width:460px;
   margin:22px auto 18px;
 }
 
-/* Portrait player */
+/* main player — portrait */
 .featured-video{
   display:block;
   width:100%;
-  height:auto;
   aspect-ratio:9 / 16;
   max-height:calc(100vh - var(--headerH) - 120px);
   object-fit:contain;
@@ -226,7 +225,7 @@ body > main.section{
   border:1px solid rgba(255,255,255,.1);
 }
 
-/* Thumbnails row */
+/* thumbnails */
 .video-thumbs{
   display:flex;
   gap:12px;
@@ -234,9 +233,8 @@ body > main.section{
   margin-top:12px;
 }
 
-/* Thumbnail item */
 .video-thumb{
-  width:85px;
+  width:80px;
   cursor:pointer;
   opacity:.75;
   transition:opacity .2s ease, transform .2s ease;
@@ -251,7 +249,7 @@ body > main.section{
   opacity:1;
 }
 
-/* Portrait thumbnails */
+/* portrait thumbs */
 .video-thumb video{
   width:100%;
   aspect-ratio:9 / 16;
@@ -262,21 +260,7 @@ body > main.section{
 }
 
 /* =========================
-   Services
-   ========================= */
-.services{
-  list-style:none;
-  padding:0;
-  margin:22px 0 0;
-  display:grid;
-  gap:12px;
-  justify-items:center;
-  color:var(--muted);
-  font-weight:650;
-}
-
-/* =========================
-   Gallery
+   Gallery (UNCHANGED)
    ========================= */
 .gallery-page{
   padding-top:calc(var(--headerH) + 28px);
