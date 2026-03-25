@@ -704,6 +704,26 @@ img[src$="call-btn.png"]{
   padding-bottom:18px;
 }
 
+.gallery-sky{
+  padding-top:24px;
+  padding-bottom:18px;
+}
+
+.gallery-sky-image{
+  width:100%;
+  height:clamp(220px, 34vw, 420px);
+  border-radius:18px;
+  background:
+    linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.58)),
+    url("assets/cool-sky.webp") center/cover no-repeat;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 18px 40px rgba(0,0,0,.28);
+}
+
+.gallery-sky .muted{
+  margin-top:14px;
+}
+
 .gallery-block{
   padding-top:28px;
 }
@@ -825,6 +845,10 @@ img[src$="call-btn.png"]{
 
   .gallery-hero{
     min-height:280px;
+  }
+
+  .gallery-sky-image{
+    height:clamp(180px, 42vw, 280px);
   }
 
   .ba-grid{
