@@ -1043,3 +1043,40 @@ img[src$="call-btn.png"]{
     flex:0 0 78vw;
   }
 }
+
+/* =========================
+   Gallery Button Fix
+   ========================= */
+
+.gallery-btn-link{
+  display:flex;
+  justify-content:center;
+  margin:28px 0 10px;
+}
+
+.gallery-btn-img{
+  width:100%;
+  max-width:520px; /* controls desktop size */
+  height:auto;
+  display:block;
+  transition:transform .18s ease, filter .18s ease;
+}
+
+.gallery-btn-link:hover .gallery-btn-img{
+  transform:translateY(-3px) scale(1.02);
+  filter:brightness(1.05);
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .gallery-btn-img{
+    max-width:420px;
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .gallery-btn-img{
+    max-width:90%;
+  }
+}
