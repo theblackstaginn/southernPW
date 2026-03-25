@@ -157,7 +157,9 @@
         <h2>Recent Washes</h2>
 
         <div class="ba-carousel" aria-label="Before and after gallery">
-          <button class="car-btn prev" type="button" aria-label="Previous">‹</button>
+          <button class="car-btn prev" type="button" aria-label="Previous">
+            <img src="assets/left-arrow.webp" alt="Previous">
+          </button>
 
           <div class="car-track">
             <div class="car-page"><img src="carousel/ba-1.png" alt="Before and after project 1"></div>
@@ -173,7 +175,9 @@
             <div class="car-page"><img src="carousel/ba-11.png" alt="Before and after project 11"></div>
           </div>
 
-          <button class="car-btn next" type="button" aria-label="Next">›</button>
+          <button class="car-btn next" type="button" aria-label="Next">
+            <img src="assets/right-arrow.webp" alt="Next">
+          </button>
         </div>
       </div>
     </section>
@@ -208,20 +212,24 @@
       <div class="wrap center">
         <h2>Auto Detailing</h2>
 
-        <div class="ba-carousel" aria-label="Auto detailing before and after gallery">
-          <button class="car-btn prev" type="button" aria-label="Previous">‹</button>
+        <div class="ba-carousel" aria-label="Auto detailing gallery">
+          <button class="car-btn prev" type="button" aria-label="Previous">
+            <img src="assets/left-arrow.webp" alt="Previous">
+          </button>
 
           <div class="car-track">
             <div class="car-page"><img src="auto-carousel/auto-01.png" alt="Auto detailing result 1"></div>
             <div class="car-page"><img src="auto-carousel/auto-02.png" alt="Auto detailing result 2"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_01.PNG" alt="Auto detailing before and after set 1"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_02.PNG" alt="Auto detailing before and after set 2"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_03.PNG" alt="Auto detailing before and after set 3"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_04.PNG" alt="Auto detailing before and after set 4"></div>
-            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_05.PNG" alt="Auto detailing before and after set 5"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_01.PNG" alt="Auto detailing result 3"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_02.PNG" alt="Auto detailing result 4"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_03.PNG" alt="Auto detailing result 5"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_04.PNG" alt="Auto detailing result 6"></div>
+            <div class="car-page"><img src="auto-carousel/auto_detail_collage_clean_05.PNG" alt="Auto detailing result 7"></div>
           </div>
 
-          <button class="car-btn next" type="button" aria-label="Next">›</button>
+          <button class="car-btn next" type="button" aria-label="Next">
+            <img src="assets/right-arrow.webp" alt="Next">
+          </button>
         </div>
       </div>
     </section>
@@ -229,22 +237,39 @@
     <section class="section video-section">
       <div class="wrap center">
         <h2>Watch Us Work</h2>
-        <p class="muted">Real footage from the field.</p>
+        <p class="muted">Choose a clip below.</p>
 
-        <div class="video-grid">
-          <div class="video-card">
-            <video controls playsinline preload="metadata">
-              <source src="video/Timelapse-01.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+        <div class="video-feature">
+          <video id="mainVideo" controls playsinline preload="metadata" class="featured-video">
+            <source src="video/Timelapse-01.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-carousel" aria-label="Video thumbnails">
+          <button class="car-btn prev video-prev" type="button" aria-label="Previous video thumbnails">
+            <img src="assets/left-arrow.webp" alt="Previous">
+          </button>
+
+          <div class="video-thumb-track" id="videoThumbTrack">
+            <button class="video-thumb active" type="button" data-src="video/Timelapse-01.mp4" aria-label="Select timelapse 1">
+              <video muted playsinline preload="metadata" tabindex="-1">
+                <source src="video/Timelapse-01.mp4" type="video/mp4">
+              </video>
+              <span>Timelapse 01</span>
+            </button>
+
+            <button class="video-thumb" type="button" data-src="video/Timelapse-02.mp4" aria-label="Select timelapse 2">
+              <video muted playsinline preload="metadata" tabindex="-1">
+                <source src="video/Timelapse-02.mp4" type="video/mp4">
+              </video>
+              <span>Timelapse 02</span>
+            </button>
           </div>
 
-          <div class="video-card">
-            <video controls playsinline preload="metadata">
-              <source src="video/Timelapse-02.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <button class="car-btn next video-next" type="button" aria-label="Next video thumbnails">
+            <img src="assets/right-arrow.webp" alt="Next">
+          </button>
         </div>
       </div>
     </section>
@@ -325,6 +350,53 @@
         next.addEventListener("click", () => {
           track.scrollBy({ left: step(), behavior: "smooth" });
         });
+      });
+    })();
+
+    (function () {
+      const mainVideo = document.getElementById("mainVideo");
+      const thumbTrack = document.getElementById("videoThumbTrack");
+      const thumbs = document.querySelectorAll(".video-thumb");
+      const prevBtn = document.querySelector(".video-prev");
+      const nextBtn = document.querySelector(".video-next");
+
+      if (!mainVideo || !thumbTrack || !thumbs.length || !prevBtn || !nextBtn) return;
+
+      thumbs.forEach((thumb) => {
+        const innerVideo = thumb.querySelector("video");
+        if (innerVideo) {
+          innerVideo.pause();
+          innerVideo.currentTime = 0;
+        }
+
+        thumb.addEventListener("click", () => {
+          thumbs.forEach((t) => t.classList.remove("active"));
+          thumb.classList.add("active");
+
+          const source = mainVideo.querySelector("source");
+          if (!source) return;
+
+          mainVideo.pause();
+          mainVideo.currentTime = 0;
+          source.src = thumb.dataset.src;
+          mainVideo.load();
+        });
+      });
+
+      const thumbStep = () => {
+        const firstThumb = thumbTrack.querySelector(".video-thumb");
+        if (!firstThumb) return thumbTrack.clientWidth * 0.8;
+        const styles = window.getComputedStyle(thumbTrack);
+        const gap = parseFloat(styles.columnGap || styles.gap || 0);
+        return firstThumb.offsetWidth + gap;
+      };
+
+      prevBtn.addEventListener("click", () => {
+        thumbTrack.scrollBy({ left: -thumbStep(), behavior: "smooth" });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        thumbTrack.scrollBy({ left: thumbStep(), behavior: "smooth" });
       });
     })();
   </script>
