@@ -126,7 +126,7 @@
 
   <section class="bulletin">
     <div class="wrap center">
-      <h3>🫧April Special Offer💦</h3>
+      <h3>🧼🫧💦 April Special Offer</h3>
       <p>
         Get a <strong>FREE Basic Interior &amp; Exterior Detail</strong> when you spend
         <strong>$350 or more on pressure washing</strong>.
@@ -364,10 +364,20 @@
           const source = mainVideo.querySelector("source");
           if (!source) return;
 
+          const newSrc = thumb.dataset.src;
+          if (!newSrc) return;
+
           mainVideo.pause();
           mainVideo.currentTime = 0;
-          source.src = thumb.dataset.src;
+          source.src = newSrc;
           mainVideo.load();
+
+          const playSelectedVideo = () => {
+            mainVideo.play().catch(() => {});
+            mainVideo.removeEventListener("loadeddata", playSelectedVideo);
+          };
+
+          mainVideo.addEventListener("loadeddata", playSelectedVideo);
         });
       });
 
