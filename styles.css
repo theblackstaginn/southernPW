@@ -4,9 +4,8 @@
   --wrap:1000px;
   --pad:20px;
   --sectionY:64px;
-
-  /* fixed header height baseline */
   --headerH:56px;
+  --red:#e10600;
 }
 
 *{box-sizing:border-box}
@@ -16,10 +15,11 @@ body{
   font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color:var(--text);
   line-height:1.5;
+  background:#000;
 }
 
 /* =========================
-   Background (fixed)
+   Background
    ========================= */
 .bg{
   position:fixed;
@@ -28,7 +28,6 @@ body{
   background:url("assets/web-bg.png") center/cover no-repeat;
 }
 
-/* Darken layer */
 .bg::after{
   content:"";
   position:absolute;
@@ -49,10 +48,11 @@ body{
   margin:0 auto;
   padding:0 var(--pad);
 }
+
 .center{text-align:center}
 
 /* =========================
-   Top header (fixed)
+   Fixed top header
    ========================= */
 .top-header{
   position:fixed;
@@ -81,6 +81,8 @@ body{
 .header-nav{
   display:flex;
   gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 .header-nav a{
@@ -89,9 +91,9 @@ body{
   font-weight:600;
   font-size:14px;
 }
+
 .header-nav a:hover{color:#fff}
 
-/* When header stacks */
 @media(max-width:700px){
   :root{ --headerH:92px; }
 
@@ -114,7 +116,7 @@ h1,h2,h3,
 }
 
 h1,h2,h3{
-  color:#e10600;
+  color:var(--red);
   text-shadow:0 1px 2px rgba(0,0,0,.85);
 }
 
@@ -124,10 +126,16 @@ h2{
   letter-spacing:.06em;
 }
 
+h3{
+  font-size:clamp(24px,2.6vw,34px);
+  margin:0 0 10px;
+}
+
+p{margin:0 0 14px}
 .muted{color:var(--muted)}
 
 /* =========================
-   HERO
+   Hero
    ========================= */
 .hero{
   padding:calc(var(--headerH) + 24px) 0 28px;
@@ -156,7 +164,6 @@ h2{
   text-transform:none;
 }
 
-/* HERO CTA */
 .hero-cta{
   display:flex;
   justify-content:center;
@@ -203,9 +210,43 @@ h2{
   .sticker-divider{
     margin:14px 0 10px;
   }
+
   .sticker-divider img{
     width:min(440px,80vw);
   }
+}
+
+/* =========================
+   Bulletin / promo
+   ========================= */
+.bulletin{
+  padding:28px 0 22px;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.22);
+}
+
+.bulletin h3{
+  margin-bottom:10px;
+}
+
+.bulletin p{
+  max-width:760px;
+  margin:0 auto 10px;
+  color:var(--text);
+  font-size:clamp(16px,2vw,20px);
+  font-weight:700;
+}
+
+.bulletin strong{
+  color:#fff;
+}
+
+.bulletin-note{
+  color:var(--muted) !important;
+  font-size:14px !important;
+  font-weight:600 !important;
+  letter-spacing:.01em;
 }
 
 /* =========================
@@ -215,8 +256,6 @@ h2{
   padding:var(--sectionY) 0;
 }
 
-/* Internal pages use <main class="section"> directly under body.
-   Give room under fixed header so headings never get eaten. */
 body > main.section{
   padding-top:calc(var(--headerH) + 28px);
 }
@@ -228,8 +267,29 @@ body > main.section{
 }
 
 /* =========================
-   Carousel (SINGLE image per slide)
-   FIXED: flex track + true centering
+   Truck section
+   ========================= */
+.truck-section{
+  padding-top:42px;
+}
+
+.truck-shot{
+  display:block;
+  width:min(100%, 760px);
+  margin:0 auto 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.2);
+}
+
+.truck-copy{
+  max-width:680px;
+  margin:0 auto;
+  font-weight:600;
+}
+
+/* =========================
+   Carousel
    ========================= */
 .ba-carousel{
   position:relative;
@@ -237,7 +297,6 @@ body > main.section{
   margin:0 auto;
 }
 
-/* Switch grid -> flex for bulletproof centering */
 .car-track{
   display:flex;
   width:100%;
@@ -247,58 +306,43 @@ body > main.section{
   -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
 }
+
 .car-track::-webkit-scrollbar{display:none}
 
-/* Each slide is exactly one viewport-width of the carousel */
 .car-page{
   flex:0 0 100%;
   scroll-snap-align:start;
-
   display:flex;
   justify-content:center;
   align-items:center;
-
   padding:0 12px;
   margin:0 0 26px;
-
-  /* never exceed viewport height (minus header breathing room) */
   max-height:calc(100vh - var(--headerH) - 48px);
 }
 
-/* Image centers inside slide, scales down when needed */
 .car-page img{
   display:block;
-
   max-width:100%;
   max-height:calc(100vh - var(--headerH) - 48px);
-
   width:auto;
   height:auto;
-
   object-fit:contain;
   object-position:center;
-
   border-radius:12px;
-
-  /* makes any empty space look intentional */
   background:rgba(0,0,0,.18);
 }
 
-/* Tap arrows */
 .car-btn{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
   z-index:5;
-
   width:46px;
   height:46px;
   border-radius:999px;
-
   border:1px solid rgba(255,255,255,.25);
   background:rgba(0,0,0,.55);
   color:#fff;
-
   font-size:28px;
   line-height:1;
   cursor:pointer;
@@ -307,26 +351,136 @@ body > main.section{
 .car-btn.prev{ left:-10px; }
 .car-btn.next{ right:-10px; }
 
+.car-btn:hover{
+  background:rgba(0,0,0,.72);
+}
+
 @media(max-width:820px){
   .car-btn.prev{ left:6px; }
   .car-btn.next{ right:6px; }
 }
 
 /* =========================
-   Referral section
+   Preview grids
    ========================= */
-.referral{
-  background:transparent;
-  border-top:1px solid rgba(255,255,255,.08);
-  border-bottom:1px solid rgba(255,255,255,.08);
+.work-preview{
+  padding-top:18px;
 }
 
-.referral h2{ margin-bottom:12px; }
+.preview-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:14px;
+  margin-top:20px;
+}
 
-.referral p{
-  max-width:760px;
-  margin:0 auto;
-  font-size:15px;
+.preview-card{
+  display:block;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(0,0,0,.22);
+}
+
+.preview-card img{
+  display:block;
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.gallery-link-row{
+  margin-top:20px;
+}
+
+.gallery-link,
+.gallery-link:visited{
+  display:inline-block;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(0,0,0,.36);
+  padding:10px 18px;
+  border-radius:999px;
+}
+
+.gallery-link:hover{
+  background:rgba(255,255,255,.08);
+}
+
+@media(max-width:900px){
+  .preview-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .preview-card img{
+    height:220px;
+  }
+}
+
+@media(max-width:560px){
+  .preview-grid{
+    grid-template-columns:1fr;
+  }
+
+  .preview-card img{
+    height:auto;
+    max-height:340px;
+    object-fit:cover;
+  }
+}
+
+/* =========================
+   Video section
+   ========================= */
+.video-section{
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.18);
+}
+
+.video-stage{
+  max-width:820px;
+  margin:20px auto 0;
+}
+
+.video-stage video{
+  display:block;
+  width:100%;
+  border-radius:14px;
+  background:#000;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.video-rail{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+
+.video-thumb{
+  appearance:none;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(0,0,0,.4);
+  color:#fff;
+  cursor:pointer;
+  border-radius:999px;
+  padding:10px 16px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+
+.video-thumb:hover{
+  background:rgba(255,255,255,.08);
+}
+
+.video-thumb.active{
+  background:var(--red);
+  border-color:var(--red);
 }
 
 /* =========================
@@ -341,6 +495,23 @@ body > main.section{
   justify-items:center;
   color:var(--muted);
   font-weight:650;
+}
+
+/* =========================
+   Referral
+   ========================= */
+.referral{
+  background:transparent;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.referral h2{ margin-bottom:12px; }
+
+.referral p{
+  max-width:760px;
+  margin:0 auto;
+  font-size:15px;
 }
 
 /* =========================
@@ -363,7 +534,7 @@ body > main.section{
 }
 
 /* =========================
-   Contact CTA (Call button)
+   Contact CTA
    ========================= */
 .contact-cta{
   margin-top:28px;
@@ -377,7 +548,7 @@ img[src$="call-btn.png"]{
 }
 
 /* =========================
-   Black Stag credit (not blue)
+   Credit links
    ========================= */
 .credit,
 .credit:visited{
@@ -391,30 +562,35 @@ img[src$="call-btn.png"]{
 }
 
 /* =========================
-   Gallery page (DESKTOP + DEFAULT)
-   Make images smaller + centered
+   Gallery page
    ========================= */
 .gallery-page{
-  /* inner pages need room under fixed header */
-  padding-top: calc(var(--headerH) + 28px);
+  padding-top:calc(var(--headerH) + 28px);
 }
 
-/* Clamp the whole gallery block so it doesn't go full wrap */
+.gallery-intro{
+  max-width:700px;
+  margin:0 auto;
+}
+
+.gallery-truck{
+  padding-top:24px;
+  padding-bottom:18px;
+}
+
+.gallery-block{
+  padding-top:28px;
+}
+
 .ba-grid{
   display:grid;
-
-  /* Two columns, but each column has a max width */
-  grid-template-columns: repeat(2, minmax(0, 420px));
+  grid-template-columns:repeat(2, minmax(0, 420px));
   justify-content:center;
-
   gap:14px;
   margin-top:18px;
-
-  /* hard cap so it stays tasteful on wide screens */
-  max-width: 900px;
+  max-width:900px;
   margin-left:auto;
   margin-right:auto;
-
   align-items:start;
 }
 
@@ -429,9 +605,8 @@ img[src$="call-btn.png"]{
   background:rgba(0,0,0,.35);
   border:1px solid rgba(255,255,255,.10);
   text-align:center;
-
   position:sticky;
-  top: calc(var(--headerH) + 10px);
+  top:calc(var(--headerH) + 10px);
   z-index:2;
 }
 
@@ -441,8 +616,6 @@ img[src$="call-btn.png"]{
   border:1px solid rgba(255,255,255,.10);
   background:rgba(0,0,0,.25);
   display:block;
-
-  /* ensures each cell centers within its column */
   justify-self:center;
   width:100%;
   max-width:420px;
@@ -452,69 +625,138 @@ img[src$="call-btn.png"]{
   width:100%;
   height:auto;
   display:block;
-
-  /* key: prevents massive tall images on desktop */
-  max-height: 420px;
-  object-fit: contain;
-  object-position: center;
-
-  /* intentional letterbox */
-  background: rgba(0,0,0,.18);
+  max-height:420px;
+  object-fit:contain;
+  object-position:center;
+  background:rgba(0,0,0,.18);
 }
 
-/* =========================
-   Gallery — mobile sizing fix
-   ========================= */
-@media (max-width: 820px){
+.detail-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:14px;
+  margin-top:20px;
+}
 
-  /* keep page breathing room */
+.detail-card{
+  display:block;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(0,0,0,.22);
+}
+
+.detail-card img{
+  display:block;
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:18px;
+  margin-top:22px;
+}
+
+.video-card{
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(0,0,0,.22);
+}
+
+.video-card video{
+  display:block;
+  width:100%;
+  background:#000;
+}
+
+.gallery-cta{
+  padding-top:34px;
+}
+
+.gallery-cta-img{
+  height:150px;
+  width:auto;
+}
+
+@media(max-width:900px){
+  .detail-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:820px){
   .gallery-page{
-    padding-top: calc(var(--headerH) + 22px);
+    padding-top:calc(var(--headerH) + 22px);
   }
 
-  /* one column reads better on phones */
   .ba-grid{
-    grid-template-columns: 1fr;
-    max-width: 520px;
-    gap: 12px;
+    grid-template-columns:1fr;
+    max-width:520px;
+    gap:12px;
   }
 
-  /* kill sticky headers on mobile (they eat screen) */
   .ba-grid-head{
-    position: static;
-    top: auto;
+    position:static;
+    top:auto;
   }
 
-  /* each image gets a sane max height */
   .ba-cell{
-    max-width: 92vw;
-    margin: 0 auto;
+    max-width:92vw;
+    margin:0 auto;
   }
 
   .ba-cell img{
-    width: 100%;
-    height: auto;
-    max-height: 55vh;          /* key: prevents “giant poster” */
-    object-fit: contain;        /* no cropping */
-    background: rgba(0,0,0,.18);/* makes letterbox look intentional */
+    width:100%;
+    height:auto;
+    max-height:55vh;
+    object-fit:contain;
+    background:rgba(0,0,0,.18);
   }
 }
+
+@media(max-width:640px){
+  .detail-grid{
+    grid-template-columns:1fr;
+  }
+
+  .detail-card img{
+    height:auto;
+    max-height:420px;
+    object-fit:cover;
+  }
+
+  .gallery-cta-img{
+    height:132px;
+  }
+}
+
+/* =========================
+   Footer
+   ========================= */
 .site-footer{
-  margin-top: 64px;
-  padding: 32px 20px 20px;
-  text-align: center;
-  font-size: .9rem;
-  opacity: .85;
+  margin-top:64px;
+  padding:32px 20px 20px;
+  text-align:center;
+  font-size:.9rem;
+  opacity:.85;
 }
 
 .site-footer a{
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,.25);
-  padding-bottom: 2px;
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:2px;
 }
 
 .site-footer a:hover{
-  border-bottom-color: rgba(0,0,0,.55);
-  opacity: 1;
+  border-bottom-color:rgba(255,255,255,.55);
+  opacity:1;
 }
