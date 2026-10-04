@@ -557,7 +557,8 @@ body > main.section{
   display:flex;
   flex-direction:column;
   gap:8px;
-  align-items:stretch;
+  align-items:center;
+  justify-content:center;
   border:1px solid rgba(255,255,255,.16);
   background:rgba(0,0,0,.28);
   border-radius:12px;
@@ -999,35 +1000,6 @@ img[src$="call-btn.png"]{
 }
 
 /* =========================
-   VIDEO THUMBNAILS — FULL IMAGE
-   ========================= */
-.video-thumb video{
-  object-fit:contain !important;
-  background:#000;
-}
-
-/* =========================
-   REMOVE VIDEO LABEL TEXT
-   ========================= */
-.video-thumb span{
-  display:none !important;
-}
-
-/* =========================
-   VIDEO THUMB SIZE (MOBILE)
-   ========================= */
-@media(max-width:820px){
-  .video-thumb{
-    flex:0 0 60vw;
-    padding:8px;
-  }
-
-  .video-thumb video{
-    aspect-ratio:9 / 16;
-  }
-}
-
-/* =========================
    FEATURE VIDEO — MOBILE BALANCE
    ========================= */
 @media(max-width:820px){
@@ -1037,26 +1009,8 @@ img[src$="call-btn.png"]{
 }
 
 /* =========================
-   Video thumbnail image patch
+   Video thumbnail images
    ========================= */
-.video-thumb{
-  flex:0 0 min(220px, 70vw);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(0,0,0,.28);
-  border-radius:12px;
-  padding:10px;
-  cursor:pointer;
-  color:#fff;
-}
-
-.video-thumb.active{
-  border-color:rgba(255,255,255,.46);
-  background:rgba(255,255,255,.08);
-}
-
 .video-thumb img{
   display:block;
   width:100%;
@@ -1069,16 +1023,4 @@ img[src$="call-btn.png"]{
 .video-thumb span,
 .video-thumb video{
   display:none !important;
-}
-
-@media(max-width:820px){
-  .video-thumb{
-    flex:0 0 min(200px, 72vw);
-  }
-}
-
-@media(max-width:560px){
-  .video-thumb{
-    flex:0 0 78vw;
-  }
 }
