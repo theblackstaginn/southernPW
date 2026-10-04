@@ -144,6 +144,12 @@ h2{
   letter-spacing:.06em;
 }
 
+.page-title{
+  font-size:clamp(28px,3.2vw,40px);
+  margin:0 0 14px;
+  letter-spacing:.06em;
+}
+
 h3{
   font-size:clamp(24px,2.6vw,34px);
   margin:0 0 10px;
