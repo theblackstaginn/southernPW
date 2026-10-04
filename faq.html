@@ -120,5 +120,14 @@
   </p>
 </footer>
   </main>
+  <script>
+    (() => {
+      const key = new URLSearchParams(window.location.search).get("_spw") || "";
+      const script = document.createElement("script");
+      script.async = false;
+      script.src = "site.js" + (key ? "?v=" + encodeURIComponent(key) : "");
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
