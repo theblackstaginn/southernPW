@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "batch": "Southern Pressure Washing active brand/UI asset provenance batch 01",
+  "site": "https://southernpresswashing.com",
+  "rights_holder": "Southern Pressure Washing",
+  "production_studio": "Lace & Leather Arcane Studio",
+  "rights": "Copyright 2026 Southern Pressure Washing",
+  "rights_statement_url": "https://blackstagweb.com/ownership.html",
+  "scope": "Only assets currently referenced by the live Southern Pressure Washing site shell, branding, navigation, backgrounds, and install icons. Customer/job photography is intentionally excluded from this first safe batch.",
+  "files": [
+    {
+      "path": "assets/spw-logo.png",
+      "description": "Southern Pressure Washing logo used on the live website; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/rqst-btn.png",
+      "description": "Southern Pressure Washing request estimate button artwork used on the live website; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/fb-btn.png",
+      "description": "Southern Pressure Washing Facebook button artwork used on the live website; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/local-sticker.png",
+      "description": "Southern Pressure Washing local service sticker artwork used on the live website; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/left-arrow.webp",
+      "description": "Southern Pressure Washing carousel left-arrow interface artwork; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/right-arrow.webp",
+      "description": "Southern Pressure Washing carousel right-arrow interface artwork; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/gallery-button.webp",
+      "description": "Southern Pressure Washing gallery button artwork used on the live website; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/call-btn.png",
+      "description": "Southern Pressure Washing call button artwork used on the live website; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/web-bg.png",
+      "description": "Southern Pressure Washing desktop website background artwork; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/mobile-bg.png",
+      "description": "Southern Pressure Washing mobile website background artwork; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "assets/cool-sky.webp",
+      "description": "Southern Pressure Washing website sky background artwork; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "icons/favicon.png",
+      "description": "Southern Pressure Washing website favicon artwork; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "icons/apple-touch-icon.png",
+      "description": "Southern Pressure Washing Apple touch icon artwork; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "icons/icon-192.png",
+      "description": "Southern Pressure Washing 192 pixel web app icon artwork; produced and prepared by Lace & Leather Arcane Studio."
+    },
+    {
+      "path": "icons/icon-512.png",
+      "description": "Southern Pressure Washing 512 pixel web app icon artwork; produced and prepared by Lace & Leather Arcane Studio."
+    }
+  ]
+}
