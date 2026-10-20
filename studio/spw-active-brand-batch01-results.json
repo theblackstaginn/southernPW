@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "batch": "Southern Pressure Washing active brand/UI asset provenance batch 01",
+  "scope": "Only assets currently referenced by the live Southern Pressure Washing site shell, branding, navigation, backgrounds, and install icons. Customer/job photography is intentionally excluded from this first safe batch.",
+  "site": "https://southernpresswashing.com",
+  "rights_holder": "Southern Pressure Washing",
+  "production_studio": "Lace & Leather Arcane Studio",
+  "total": 15,
+  "verified": 11,
+  "already_credited": 0,
+  "held_for_review": 4,
+  "updated_paths": [
+    "assets/spw-logo.png",
+    "assets/local-sticker.png",
+    "assets/left-arrow.webp",
+    "assets/right-arrow.webp",
+    "assets/gallery-button.webp",
+    "assets/call-btn.png",
+    "assets/cool-sky.webp",
+    "icons/favicon.png",
+    "icons/apple-touch-icon.png",
+    "icons/icon-192.png",
+    "icons/icon-512.png"
+  ],
+  "held_paths": [
+    {
+      "path": "assets/rqst-btn.png",
+      "reason": "existing_authenticity_credentials"
+    },
+    {
+      "path": "assets/fb-btn.png",
+      "reason": "existing_authenticity_credentials"
+    },
+    {
+      "path": "assets/web-bg.png",
+      "reason": "existing_authenticity_credentials"
+    },
+    {
+      "path": "assets/mobile-bg.png",
+      "reason": "existing_authenticity_credentials"
+    }
+  ],
+  "visual_review": "pending",
+  "live_site_code_changed": false,
+  "files": [
+    {
+      "path": "assets/spw-logo.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "e889b755db719ea055fa44c5d67be8475357e59da2f30ab1ef0498f6836a4515",
+      "status": "verified",
+      "operation": "metadata_only",
+      "format": "PNG",
+      "dimensions": [
+        834,
+        652
+      ],
+      "output_sha256": "8d3ca824635657cd48d56e5dde87c27aaed7fabac2d43db6327b1ad2eee027e1",
+      "pixels_alpha_frames_profile_unchanged": true,
+      "compressed_picture_data_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "assets/rqst-btn.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "a44ebc5794b849acb0b679e3e483e5df0d772954c4227b3f27f8c7f2c69d144d",
+      "status": "held_for_review",
+      "reason": "existing_authenticity_credentials",
+      "output_sha256": "a44ebc5794b849acb0b679e3e483e5df0d772954c4227b3f27f8c7f2c69d144d"
+    },
+    {
+      "path": "assets/fb-btn.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "88c5756f16e023cb92927efff424ce04b378b3967d1c66794e98334925fa4e9f",
+      "status": "held_for_review",
+      "reason": "existing_authenticity_credentials",
+      "output_sha256": "88c5756f16e023cb92927efff424ce04b378b3967d1c66794e98334925fa4e9f"
+    },
+    {
+      "path": "assets/local-sticker.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "d03531dc261eeca35ebd150e9d7efa3adad3f4ec3d79ef5127cac9640aaad243",
+      "status": "verified",
+      "operation": "metadata_only",
+      "format": "PNG",
+      "dimensions": [
+        975,
+        497
+      ],
+      "output_sha256": "87160eeeee2c9313fd610a17636d54bf84217e6d2d8fe9ef129e33e2d74824dc",
+      "pixels_alpha_frames_profile_unchanged": true,
+      "compressed_picture_data_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "assets/left-arrow.webp",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "d216fef6444d2f235034c2489d02ada0f4f6025b04e0ce2eba955fb2e8d8be3e",
+      "status": "verified",
+      "operation": "metadata_only",
+      "format": "WEBP",
+      "dimensions": [
+        525,
+        328
+      ],
+      "output_sha256": "aebffdf33b92c4c1a7873c6d82a99a1ebf5632236c4ca21f631b2b2183d5c2de",
+      "pixels_alpha_frames_profile_unchanged": true,
+      "compressed_picture_data_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "assets/right-arrow.webp",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "3076c7466958d156d670f76ec0c0827ff055ef551b6b1db503ff937cb5e1e140",
+      "status": "verified",
+      "operation": "metadata_only",
+      "format": "WEBP",
+      "dimensions": [
+        525,
+        328
+      ],
+      "output_sha256": "0179830e8736a7804cf5bebaaabab3f774f8bc1a3ff3aca8679b7aa6afd529b7",
+      "pixels_alpha_frames_profile_unchanged": true,
+      "compressed_picture_data_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "assets/gallery-button.webp",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "8b28acce10e6cff642afb81641df514a56742748a050bc2f9eb04b820988e41a",
+      "status": "verified",
+      "operation": "metadata_only",
+      "format": "WEBP",
+      "dimensions": [
+        1190,
+        304
+      ],
+      "output_sha256": "211e146d704a9753afef0421a8e8485a04b71de2c7f06869849f2e056dad8a96",
+      "pixels_alpha_frames_profile_unchanged": true,
+      "compressed_picture_data_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "assets/call-btn.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "3880893f59af0c95f3c2895f1a87262e8f9e797cf79b02a6f6aa4080eb7580e1",
+      "status": "verified",
+      "operation": "metadata_only",
+      "format": "PNG",
+      "dimensions": [
+        1234,
+        317
+      ],
+      "output_sha256": "e4141e7ca016d5e8933d6891ed02973fd366d652b8d12f65a39e04388cf85349",
+      "pixels_alpha_frames_profile_unchanged": true,
+      "compressed_picture_data_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "assets/web-bg.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "4e1cee7ac7e020279eb9e56d815f41204b65b3c995a5c971ea40f3dbc709768f",
+      "status": "held_for_review",
+      "reason": "existing_authenticity_credentials",
+      "output_sha256": "4e1cee7ac7e020279eb9e56d815f41204b65b3c995a5c971ea40f3dbc709768f"
+    },
+    {
+      "path": "assets/mobile-bg.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "8389657b652acd56dab21743fe93ac75897c8d8e6e55353eaff51abcea85f5fd",
+      "status": "held_for_review",
+      "reason": "existing_authenticity_credentials",
+      "output_sha256": "8389657b652acd56dab21743fe93ac75897c8d8e6e55353eaff51abcea85f5fd"
+    },
+    {
+      "path": "assets/cool-sky.webp",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "7c87f19503221e541ff97cab75d010fef1e7e5f771d644435e9eaac7c82e15b8",
+      "status": "verified",
+      "operation": "metadata_only",
+      "format": "WEBP",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "output_sha256": "d1359c372b98c93ecc5b1ada6ea8f6ee0acaa6574dee04e2811d97acebecccc6",
+      "pixels_alpha_frames_profile_unchanged": true,
+      "compressed_picture_data_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "icons/favicon.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "c4abbf60d4e450c00838d81d352a84abf3f91f22346096d926b699483f8cbe5d",
+      "status": "verified",
+      "operation": "jpeg_bytes_to_true_png",
+      "source_container_format": "JPEG",
+      "output_container_format": "PNG",
+      "dimensions": [
+        846,
+        850
+      ],
+      "output_sha256": "9a45e2a1518f1f76fd584634c65767c82d5d01abe0a57ead150397a0d874c67a",
+      "decoded_rgb_pixels_unchanged": true,
+      "icc_profile_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "icons/apple-touch-icon.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "c4abbf60d4e450c00838d81d352a84abf3f91f22346096d926b699483f8cbe5d",
+      "status": "verified",
+      "operation": "jpeg_bytes_to_true_png",
+      "source_container_format": "JPEG",
+      "output_container_format": "PNG",
+      "dimensions": [
+        846,
+        850
+      ],
+      "output_sha256": "a4d4a6d39c862a05a0acb2fec69a2782c9fbc6ed1902188cf0983bcfc8129e4c",
+      "decoded_rgb_pixels_unchanged": true,
+      "icc_profile_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "icons/icon-192.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "c4abbf60d4e450c00838d81d352a84abf3f91f22346096d926b699483f8cbe5d",
+      "status": "verified",
+      "operation": "jpeg_bytes_to_true_png",
+      "source_container_format": "JPEG",
+      "output_container_format": "PNG",
+      "dimensions": [
+        846,
+        850
+      ],
+      "output_sha256": "e0a29a6aca1a785d937a28cb2fb430bdeb3a4d0c34f3ddcf78046f9d29e67668",
+      "decoded_rgb_pixels_unchanged": true,
+      "icc_profile_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    },
+    {
+      "path": "icons/icon-512.png",
+      "rights_holder": "Southern Pressure Washing",
+      "source_sha256": "c4abbf60d4e450c00838d81d352a84abf3f91f22346096d926b699483f8cbe5d",
+      "status": "verified",
+      "operation": "jpeg_bytes_to_true_png",
+      "source_container_format": "JPEG",
+      "output_container_format": "PNG",
+      "dimensions": [
+        846,
+        850
+      ],
+      "output_sha256": "611dc4f015677b8488e55cba98c4c37e0021d5a994d730cdea25c35ff88f9ce2",
+      "decoded_rgb_pixels_unchanged": true,
+      "icc_profile_unchanged": true,
+      "creator": "Lace & Leather Arcane Studio",
+      "studio_credit": "Lace & Leather Arcane Studio (website artwork production and preparation)",
+      "rights": "Copyright 2026 Southern Pressure Washing",
+      "rights_statement_url": "https://blackstagweb.com/ownership.html"
+    }
+  ]
+}
